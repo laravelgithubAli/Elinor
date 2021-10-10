@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,8 @@ class UserSeeder extends Seeder
             'lastname'=>'mohammadi',
             'number'=>'09991234567',
             'email'=>'Clob@gmail.com',
-            'password'=>bcrypt('1111')
+            'password'=>bcrypt('1111'),
+            'role_id' => Role::query()->where('title','admin')->first()->id
         ]);
 
     }
