@@ -77,7 +77,7 @@ class UserController extends Controller
     public function show()
     {
         return view('admin.users.show',[
-            'users' => User::all()
+            'users' => User::all()->where('id','!=' , '1')
         ])->with(['activity8' => 'side-menu--active','submenu8' => 'side-menu__sub-open']);
     }
 

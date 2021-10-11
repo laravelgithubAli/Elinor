@@ -23,6 +23,30 @@ class Product extends Model
         return $this->hasMany(Picture::class);
     }
 
+    public function discount()
+    {
+        return $this->hasOne(Discount::class);
+    }
+
+    public function addDiscount(Request $request)
+    {
+        if (!$this->discount()->exists()){
+            $this->discount()->create([
+                'value' => $request->get('value')
+            ]);
+        }else {
+            $this->discount->update([
+                'value' => $request->get('value')
+            ]);
+        }
+
+    }
+
+    public function deleteDiscount()
+    {
+        $this->discount()->delete();
+    }
+
     public function addPicture($request)
     {
         $path = $request->file('image')->storeAs(
@@ -58,5 +82,26 @@ class Product extends Model
     public function hasProductquestion(Product $product)
     {
         return $this->productquestions()->where('product_id',$product->id)->get();
+    }
+
+    public function getCostWithDiscountAttribute()
+    {
+        if (!$this->discount()->exists()){
+            return $this->cost;
+        }
+        return $this->cost - $this->cost * $this->discount->value /100;
+    }
+
+    public function getHasDiscountAttribute()
+    {
+        return $this->discount()->exists();
+    }
+
+    public function getDiscountValueAttribute()
+    {
+        if ($this->has_discount){
+            return $this->discount->value;
+        }
+        return null;
     }
 }

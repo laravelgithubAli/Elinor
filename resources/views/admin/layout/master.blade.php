@@ -765,6 +765,12 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="{{route('sliders.index')}}" class="side-menu {{isset($activity12) ? $activity12:''}}">
+                    <div class="side-menu__icon"> <i data-feather="calendar"></i></div>
+                    <div class="side-menu__title"> اسلایدر </div>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- END: Side Menu -->

@@ -222,8 +222,9 @@
                                     <th class="whitespace-nowrap">امتیاز</th>
                                     <th class="whitespace-nowrap">دسته بندی</th>
                                     <th class="whitespace-nowrap">قیمت</th>
-                                    <th class="whitespace-nowrap">موجودی انبار</th>
-                                    <th class="whitespace-nowrap"> گالری تصاویر</th>
+                                    <th class="whitespace-nowrap">موجودی</th>
+                                    <th class="whitespace-nowrap">گالری</th>
+                                    <th class="whitespace-nowrap">تخفیف</th>
                                     <th class="whitespace-nowrap"> مشخصات </th>
                                     <th class="text-center whitespace-nowrap">فعالیت</th>
                                 </tr>
@@ -268,6 +269,20 @@
                                         <td class="w-40 text-center">
                                             <a href="{{route('products.pictures.index',$product)}}"
                                                class="btn btn-sm btn-warning"> گالری </a>
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            @if(!$product->has_discount)
+                                                <a href="{{route('products.discounts.create',$product)}}"
+                                                   class="btn btn-sm btn-warning">ایجاد تخفیف</a>
+                                            @else
+                                                <p>{{$product->discount->value}}</p>
+                                                <form action="{{route('products.discounts.destroy', ['product' => $product, 'discount' => $product->discount])}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <input type="submit" class="btn btn-sm btn-danger" value="حذف">
+                                                </form>
+                                            @endif
                                         </td>
                                         <td class="w-40">
                                             <a href="{{route('products.properties.index',$product)}}"
