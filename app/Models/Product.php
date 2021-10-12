@@ -28,7 +28,7 @@ class Product extends Model
         return $this->hasOne(Discount::class);
     }
 
-    public function addDiscount(Request $request)
+    public function addDiscount(\Illuminate\Http\Request $request)
     {
         if (!$this->discount()->exists()){
             $this->discount()->create([
