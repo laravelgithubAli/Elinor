@@ -104,4 +104,14 @@ class Product extends Model
         }
         return null;
     }
+
+    public function stars()
+    {
+        return $this->hasMany(Star::class);
+    }
+
+    public function HasStar()
+    {
+        return Star::query()->where('product_id',$this->id)->firstOrFail();
+    }
 }

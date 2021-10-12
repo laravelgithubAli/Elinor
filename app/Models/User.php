@@ -50,4 +50,9 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function getHasStarAttribute($product)
+    {
+        return Star::query()->where('user_id',$this->id)->where('product_id',$product->id)->exists();
+    }
+
 }
