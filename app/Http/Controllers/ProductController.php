@@ -44,9 +44,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $path = null;
 
-        $path = $request->file('image')->storeAs(
-            'public/products', $request->file('image')->getClientOriginalName());
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->storeAs(
+                'public/products', $request->file('image')->getClientOriginalName());
+        }
 
         Product::query()->create([
             'category_id' => $request->get('category_id'),

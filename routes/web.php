@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminhomeController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Client\HomeController;
@@ -42,9 +43,8 @@ Route::post('/logout',[UserController::class, 'logout'])->name('logout');
 
 Route::prefix('/adminpanel')->group(function () {
 
-    Route::get('/',function (){
-       return view('admin.home');
-    });
+    Route::get('/',[AdminhomeController::class,'index'])->name('admin.home');
+
 
     Route::resource('roles',RoleController::class);
     Route::get('/users',[UserController::class, 'show'])->name('users.show');

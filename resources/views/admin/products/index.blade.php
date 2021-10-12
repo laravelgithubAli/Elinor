@@ -309,43 +309,34 @@
                                             <a href="" class="font-medium whitespace-nowrap ">{{$product->name}}</a>
                                         </td>
                                         <td class="w-40 text-center">
-
+                                            @if(!auth()->user()->getHasStarAttribute($product))
                                             <form action="{{route('stars.products.store',$product)}}" method="post">
                                                 @csrf
 
                                                 <input type="radio"
-                                                       @if ($product->HasStar()->value == 1)
-                                                       checked
-                                                       @endif
+
                                                        name="value" value="1">
                                                 <input type="radio"
-                                                       @if ($product->HasStar()->value == 2)
-                                                       checked
-                                                       @endif
+
                                                        name="value" value="2">
                                                 <input type="radio"
-                                                       @if ($product->HasStar()->value == 3)
-                                                       checked
-                                                       @endif
+
                                                        name="value" value="3">
                                                 <input type="radio"
-                                                       @if ($product->HasStar()->value == 4)
-                                                       checked
-                                                       @endif
+
                                                        name="value" value="4">
                                                 <input type="radio"
-                                                       @if ($product->HasStar()->value == 5)
-                                                       checked
-                                                       @endif
+
                                                        name="value" value="5">
-                                                @if(!auth()->user()->getHasStarAttribute($product))
+
                                                     <input type="submit" value="ثبت">
-                                                @else
-                                                    <p>نظر ثبت شد</p>
-                                                @endif
+
 
                                             </form>
-
+                                            @else
+                                             {{$product->HasStar()}}
+                                                <p>نظر ثبت شد</p>
+                                            @endif
 
                                         </td>
                                         <td class="w-40 text-center">{{$product->category->title}}</td>

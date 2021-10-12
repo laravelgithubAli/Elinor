@@ -249,11 +249,12 @@
                                         <div class="flex">
                                             <i data-feather="monitor" class="report-box__icon text-theme-12"></i>
                                             <div class="mr-auto">
-                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% بالاتر از ماه گذشته"> 12% <i data-feather="chevron-up" class="w-4 h-4 mr-0.5"></i> </div>
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="مشاهده لیست محصولات">
+                                                    <a href="{{route('products.index')}}">لیست</a></div>
                                             </div>
                                         </div>
-                                        <div class="text-3xl font-bold leading-8 mt-6">2.149</div>
-                                        <div class="text-base text-gray-600 mt-1">محصولات کلی</div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">{{$product->count()}}</div>
+                                        <div class="text-base text-gray-600 mt-1">محصولات</div>
                                     </div>
                                 </div>
                             </div>
@@ -263,246 +264,13 @@
                                         <div class="flex">
                                             <i data-feather="user" class="report-box__icon text-theme-9"></i>
                                             <div class="mr-auto">
-                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% بالاتر از ماه گذشته"> 22% <i data-feather="chevron-up" class="w-4 h-4 mr-0.5"></i> </div>
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="مشاهده لیست پست ها">
+                                                    <a href="{{route('posts.index')}}">لیست</a></div>
                                             </div>
                                         </div>
-                                        <div class="text-3xl font-bold leading-8 mt-6">152.040</div>
-                                        <div class="text-base text-gray-600 mt-1">بازدیدکنندگان</div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">{{$post->count()}}</div>
+                                        <div class="text-base text-gray-600 mt-1">پست ها</div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END: General Report -->
-                    <!-- BEGIN: Sales Report -->
-                    <div class="col-span-12 lg:col-span-6 mt-8">
-                        <div class="intro-y block sm:flex items-center h-10">
-                            <h2 class="text-lg font-medium truncate ml-5">
-                                گزارش فروش
-                            </h2>
-                            <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
-                                <i data-feather="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
-                                <input type="text" class="datepicker form-control sm:w-56 box pl-10">
-                            </div>
-                        </div>
-                        <div class="intro-y box p-5 mt-12 sm:mt-5">
-                            <div class="flex flex-col xl:flex-row xl:items-center">
-                                <div class="flex">
-                                    <div>
-                                        <div class="text-theme-19 dark:text-gray-300 text-lg xl:text-xl font-bold">15,000 تومان</div>
-                                        <div class="mt-0.5 text-gray-600 dark:text-gray-600">ماه اخیر</div>
-                                    </div>
-                                    <div class="w-px h-12 border border-r border-dashed border-gray-300 dark:border-dark-5 mx-4 xl:mx-6"></div>
-                                    <div>
-                                        <div class="text-gray-600 dark:text-gray-600 text-lg xl:text-xl font-medium">10,000 تومان</div>
-                                        <div class="mt-0.5 text-gray-600 dark:text-gray-600">ماه اخیر</div>
-                                    </div>
-                                </div>
-                                <div class="dropdown xl:mr-auto mt-5 xl:mt-0">
-                                    <button class="dropdown-toggle btn btn-outline-secondary font-normal" aria-expanded="false">فیلتر دسته‌بندی<i data-feather="chevron-down" class="w-4 h-4 mr-2"></i> </button>
-                                    <div class="dropdown-menu w-40">
-                                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2 overflow-y-auto h-32"> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> کامپیوتر و لپ تاپ </a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">گوشی هوشمند</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">الکترونیک</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">عکاسی</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">ورزشی</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="report-chart">
-                                <canvas id="report-line-chart" height="169" class="mt-6"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END: Sales Report -->
-                    <!-- BEGIN: Weekly Top Seller -->
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
-                        <div class="intro-y flex items-center h-10">
-                            <h2 class="text-lg font-medium truncate ml-5">
-                                فروش بالای هفتگی
-                            </h2>
-                            <a href="" class="mr-auto text-theme-1 dark:text-theme-10 truncate"> بیشتر </a>
-                        </div>
-                        <div class="intro-y box p-5 mt-5">
-                            <canvas class="mt-3" id="report-pie-chart" height="300"></canvas>
-                            <div class="mt-8">
-                                <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-theme-11 rounded-full ml-3"></div>
-                                    <span class="truncate">17 - 30 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">62%</span>
-                                </div>
-                                <div class="flex items-center mt-4">
-                                    <div class="w-2 h-2 bg-theme-1 rounded-full ml-3"></div>
-                                    <span class="truncate">31 - 50 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">33%</span>
-                                </div>
-                                <div class="flex items-center mt-4">
-                                    <div class="w-2 h-2 bg-theme-12 rounded-full ml-3"></div>
-                                    <span class="truncate">>= 50 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">10%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END: Weekly Top Seller -->
-                    <!-- BEGIN: Sales Report -->
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
-                        <div class="intro-y flex items-center h-10">
-                            <h2 class="text-lg font-medium truncate ml-5">
-                                گزارش فروش
-                            </h2>
-                            <a href="" class="mr-auto text-theme-1 dark:text-theme-10 truncate"> بیشتر </a>
-                        </div>
-                        <div class="intro-y box p-5 mt-5">
-                            <canvas class="mt-3" id="report-donut-chart" height="300"></canvas>
-                            <div class="mt-8">
-                                <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-theme-11 rounded-full ml-3"></div>
-                                    <span class="truncate">17 - 30 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">62%</span>
-                                </div>
-                                <div class="flex items-center mt-4">
-                                    <div class="w-2 h-2 bg-theme-1 rounded-full ml-3"></div>
-                                    <span class="truncate">31 - 50 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">33%</span>
-                                </div>
-                                <div class="flex items-center mt-4">
-                                    <div class="w-2 h-2 bg-theme-12 rounded-full ml-3"></div>
-                                    <span class="truncate">>= 50 سن </span>
-                                    <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                    <span class="font-medium xl:mr-auto">10%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END: Sales Report -->
-                    <!-- BEGIN: Official Store -->
-                    <div class="col-span-12 xl:col-span-8 mt-6">
-                        <div class="intro-y block sm:flex items-center h-10">
-                            <h2 class="text-lg font-medium truncate ml-5">
-                                فروشگاه رسمی
-                            </h2>
-                            <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
-                                <i data-feather="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
-                                <input type="text" class="form-control sm:w-40 box pl-10" placeholder="فیلتر بر اساس شهر">
-                            </div>
-                        </div>
-                        <div class="intro-y box p-5 mt-12 sm:mt-5">
-                            <div>250 فروشگاه رسمی در 21 کشور ، برای مشاهده جزئیات مکان ، روی نشانگر کلیک کنید.</div>
-                            <div class="report-maps mt-5 bg-gray-200 rounded-md" data-center="-6.2425342, 106.8626478" data-sources="/dist/json/location.json"></div>
-                        </div>
-                    </div>
-                    <!-- END: Official Store -->
-                    <!-- BEGIN: Weekly Best Sellers -->
-                    <div class="col-span-12 xl:col-span-4 mt-6">
-                        <div class="intro-y flex items-center h-10">
-                            <h2 class="text-lg font-medium truncate ml-5">
-                                بهترین فروشنده هفتگی
-                            </h2>
-                        </div>
-                        <div class="mt-5">
-                            <div class="intro-y">
-                                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-14.jpg">
-                                    </div>
-                                    <div class="mr-4 ml-auto">
-                                        <div class="font-medium">کوین اسپیسی</div>
-                                        <div class="text-gray-600 text-xs mt-0.5">27 شهریور 1400</div>
-                                    </div>
-                                    <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">137 فروش</div>
-                                </div>
-                            </div>
-                            <div class="intro-y">
-                                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-12.jpg">
-                                    </div>
-                                    <div class="mr-4 ml-auto">
-                                        <div class="font-medium">رابرت دنیرو</div>
-                                        <div class="text-gray-600 text-xs mt-0.5">11 مهر 1400</div>
-                                    </div>
-                                    <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">137 فروش</div>
-                                </div>
-                            </div>
-                            <div class="intro-y">
-                                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-3.jpg">
-                                    </div>
-                                    <div class="mr-4 ml-auto">
-                                        <div class="font-medium">جان تراولتا</div>
-                                        <div class="text-gray-600 text-xs mt-0.5">14  آبان 1400</div>
-                                    </div>
-                                    <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">137 فروش</div>
-                                </div>
-                            </div>
-                            <div class="intro-y">
-                                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-12.jpg">
-                                    </div>
-                                    <div class="mr-4 ml-auto">
-                                        <div class="font-medium">آرنولد شوایتگز</div>
-                                        <div class="text-gray-600 text-xs mt-0.5">16  آذر  1400</div>
-                                    </div>
-                                    <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">137 فروش</div>
-                                </div>
-                            </div>
-                            <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                    <!-- END: Weekly Best Sellers -->
-                    <!-- BEGIN: General Report -->
-                    <div class="col-span-12 grid grid-cols-12 gap-6 mt-8">
-                        <div class="col-span-12 sm:col-span-6 xxl:col-span-3 intro-y">
-                            <div class="box p-5 zoom-in">
-                                <div class="flex items-center">
-                                    <div class="w-2/4 flex-none">
-                                        <div class="text-lg font-medium truncate">هدف فروش </div>
-                                        <div class="text-gray-600 mt-1">300 فروش </div>
-                                    </div>
-                                    <div class="flex-none mr-auto relative">
-                                        <canvas id="report-donut-chart-1" width="90" height="90"></canvas>
-                                        <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0">20%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xxl:col-span-3 intro-y">
-                            <div class="box p-5 zoom-in">
-                                <div class="flex">
-                                    <div class="text-lg font-medium truncate mr-3">شبکه های اجتماعی </div>
-                                    <div class="py-1 px-2 flex items-center rounded-full text-xs bg-gray-200 dark:bg-dark-5 text-gray-600 dark:text-gray-300 cursor-pointer mr-auto truncate">320 فالوور</div>
-                                </div>
-                                <div class="mt-4">
-                                    <canvas class="simple-line-chart-1 -ml-1" height="60"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xxl:col-span-3 intro-y">
-                            <div class="box p-5 zoom-in">
-                                <div class="flex items-center">
-                                    <div class="w-2/4 flex-none">
-                                        <div class="text-lg font-medium truncate">محصولات جدید</div>
-                                        <div class="text-gray-600 mt-1">1450 محصول</div>
-                                    </div>
-                                    <div class="flex-none mr-auto relative">
-                                        <canvas id="report-donut-chart-2" width="90" height="90"></canvas>
-                                        <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0">45%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xxl:col-span-3 intro-y">
-                            <div class="box p-5 zoom-in">
-                                <div class="flex">
-                                    <div class="text-lg font-medium truncate mr-3">تبلیغات پست شده</div>
-                                    <div class="py-1 px-2 flex items-center rounded-full text-xs bg-gray-200 dark:bg-dark-5 text-gray-600 dark:text-gray-300 cursor-pointer mr-auto truncate">180 کمپین</div>
-                                </div>
-                                <div class="mt-4">
-                                    <canvas class="simple-line-chart-1 -ml-1" height="60"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -512,170 +280,166 @@
                     <div class="col-span-12 mt-6">
                         <div class="intro-y block sm:flex items-center h-10">
                             <h2 class="text-lg font-medium truncate ml-5">
-                                محصولات برتر هفته
+                                محصولات اخیر
                             </h2>
-                            <div class="flex items-center sm:mr-auto mt-3 sm:mt-0">
-                                <button class="btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text" class="hidden sm:block w-4 h-4 ml-2"></i> خروجی اکسل </button>
-                                <button class="mr-3 btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text" class="hidden sm:block w-4 h-4 ml-2"></i> خروجی پی‌دی‌اف </button>
-                            </div>
                         </div>
                         <div class="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0">
                             <table class="table table-report sm:mt-2">
                                 <thead>
                                 <tr>
-                                    <th class="whitespace-nowrap">تصاویر</th>
+                                    <th class="whitespace-nowrap">#</th>
+                                    <th class="whitespace-nowrap">تصویر</th>
                                     <th class="whitespace-nowrap">نام محصول</th>
-                                    <th class="text-center whitespace-nowrap">موجودی</th>
-                                    <th class="text-center whitespace-nowrap">وضعیت</th>
+                                    <th class="whitespace-nowrap">امتیاز</th>
+                                    <th class="whitespace-nowrap">دسته بندی</th>
+                                    <th class="whitespace-nowrap">قیمت</th>
+                                    <th class="whitespace-nowrap">موجودی</th>
+                                    <th class="whitespace-nowrap">گالری</th>
+                                    <th class="whitespace-nowrap">تخفیف</th>
+                                    <th class="whitespace-nowrap"> مشخصات</th>
                                     <th class="text-center whitespace-nowrap">فعالیت</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="intro-x">
-                                    <td class="w-40">
-                                        <div class="flex">
-                                            <div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="اپلود شده 27 آذر 1400 ">
+                                @foreach($products as $product)
+                                    <tr class="intro-x">
+                                        <td>{{$product->id}}</td>
+                                        <td class="w-40 text-center">
+                                            <div class="flex">
+                                                <?php
+                                                $image = url("assets/images/placeholder.jpg");
+                                                if ($product->image != null and $product->image != "") {
+                                                    $image = url(str_replace('public', '/storage', $product->image));
+//                                                    $image=url(str_replace('public','/storage/app/public',$product->image));
+                                                }
+                                                ?>
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Rubick Tailwind HTML Admin Template"
+                                                         class="tooltip rounded-full"
+                                                         src="{{$image}}"
+                                                         title="{{$product->created_at}}">
+                                                </div>
                                             </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-7.jpg" title="اپلود شده 26 مهر 1400 ">
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            <a href="" class="font-medium whitespace-nowrap ">{{$product->name}}</a>
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            @if(!auth()->user()->getHasStarAttribute($product))
+                                                <form action="{{route('stars.products.store',$product)}}" method="post">
+                                                    @csrf
+
+                                                    <input type="radio"
+
+                                                           name="value" value="1">
+                                                    <input type="radio"
+
+                                                           name="value" value="2">
+                                                    <input type="radio"
+
+                                                           name="value" value="3">
+                                                    <input type="radio"
+
+                                                           name="value" value="4">
+                                                    <input type="radio"
+
+                                                           name="value" value="5">
+
+                                                    <input type="submit" value="ثبت">
+
+
+                                                </form>
+                                            @else
+                                                {{$product->HasStar()}}
+                                                <p>نظر ثبت شد</p>
+                                            @endif
+
+                                        </td>
+                                        <td class="w-40 text-center">{{$product->category->title}}</td>
+                                        <td class="w-40 text-center">{{$product->cost}}</td>
+                                        <td class="w-40 text-center">{{$product->inventory}}</td>
+                                        <td class="w-40 text-center">
+                                            <a href="{{route('products.pictures.index',$product)}}"
+                                               class="btn btn-sm btn-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                     fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                                                    <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                                    <path
+                                                        d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            @if(!$product->has_discount)
+                                                <a href="{{route('products.discounts.create',$product)}}"
+                                                   class="btn btn-sm btn-danger">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                         fill="currentColor" class="bi bi-cart-x" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"/>
+                                                        <path
+                                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                                    </svg>
+                                                </a>
+                                            @else
+                                                <p class="text-center">{{$product->discount->value}}</p>
+                                                <form
+                                                    action="{{route('products.discounts.destroy', ['product' => $product, 'discount' => $product->discount])}}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                             fill="currentColor" class="bi bi-trash"
+                                                             viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                            <path fill-rule="evenodd"
+                                                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            @endif
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            <a href="{{route('products.properties.index',$product)}}"
+                                               class="btn btn-sm btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                     fill="currentColor" class="bi bi-card-checklist"
+                                                     viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                                    <path
+                                                        d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                                                </svg>
+                                            </a>
+                                        </td>
+
+                                        <td class="table-report__action w-40">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center ml-3"
+                                                   href="{{route('products.edit',$product)}}"> <i
+                                                        data-feather="check-square"
+                                                        class="w-4 h-4 ml-1"></i>
+                                                    ویرایش</a>
+
+                                                <form action="{{route('products.destroy',$product)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="" class=" flex items-center text-theme-6">
+                                                        <input type="submit" value="حذف"><i
+                                                            data-feather="trash-2"
+                                                            class="w-4 h-4 ml-1"></i>
+                                                    </a>
+
+                                                </form>
                                             </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-14.jpg" title="اپلود شده 16 مهر 1400 ">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="" class="font-medium whitespace-nowrap">دل ایکس‌پی‌اس </a>
-                                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">کامپیوتر و لپ تاپ</div>
-                                    </td>
-                                    <td class="text-center">110</td>
-                                    <td class="w-40">
-                                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 ml-2"></i> فعال </div>
-                                    </td>
-                                    <td class="table-report__action w-56">
-                                        <div class="flex justify-center items-center">
-                                            <a class="flex items-center ml-3" href=""> <i data-feather="check-square" class="w-4 h-4 ml-1"></i> ویرایش</a>
-                                            <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 ml-1"></i> حذف </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="intro-x">
-                                    <td class="w-40">
-                                        <div class="flex">
-                                            <div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-6.jpg" title="اپلود شده 11 تیر 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="اپلود شده 23 تیر 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="اپلود شده 17 دی 1400">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="" class="font-medium whitespace-nowrap">سامسونگ کیوناین تی‌وی</a>
-                                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">الکترونیک</div>
-                                    </td>
-                                    <td class="text-center">113</td>
-                                    <td class="w-40">
-                                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 ml-2"></i> فعال </div>
-                                    </td>
-                                    <td class="table-report__action w-56">
-                                        <div class="flex justify-center items-center">
-                                            <a class="flex items-center ml-3" href=""> <i data-feather="check-square" class="w-4 h-4 ml-1"></i> ویرایش</a>
-                                            <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 ml-1"></i> حذف </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="intro-x">
-                                    <td class="w-40">
-                                        <div class="flex">
-                                            <div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-14.jpg" title="اپلود شده 14 بهمن 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-2.jpg" title="اپلود شده 18مهر 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-1.jpg" title="اپلود شده 19 تیر 1400">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="" class="font-medium whitespace-nowrap">سامسونگ اس بیست اولترا</a>
-                                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">گوشی هوشمند و لپتاپ</div>
-                                    </td>
-                                    <td class="text-center">140</td>
-                                    <td class="w-40">
-                                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 ml-2"></i> فعال </div>
-                                    </td>
-                                    <td class="table-report__action w-56">
-                                        <div class="flex justify-center items-center">
-                                            <a class="flex items-center ml-3" href=""> <i data-feather="check-square" class="w-4 h-4 ml-1"></i> ویرایش</a>
-                                            <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 ml-1"></i> حذف </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="intro-x">
-                                    <td class="w-40">
-                                        <div class="flex">
-                                            <div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-7.jpg" title="اپلود شده 16 مهر 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="اپلود شده 17 آذر 1400">
-                                            </div>
-                                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-2.jpg" title="اپلود شده 27 آذر 1400">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="" class="font-medium whitespace-nowrap">نیکون ضد </a>
-                                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">عکاسی</div>
-                                    </td>
-                                    <td class="text-center">50</td>
-                                    <td class="w-40">
-                                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 ml-2"></i> فعال </div>
-                                    </td>
-                                    <td class="table-report__action w-56">
-                                        <div class="flex justify-center items-center">
-                                            <a class="flex items-center ml-3" href=""> <i data-feather="check-square" class="w-4 h-4 ml-1"></i> ویرایش</a>
-                                            <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 ml-1"></i> حذف </a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="intro-y flex flex-wrap sm:flex-row sm:flex-nowrap items-center mt-3">
-                            <ul class="pagination">
-                                <li>
-                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
-                                </li>
-                                <li>
-                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
-                                </li>
-                                <li> <a class="pagination__link" href="">...</a> </li>
-                                <li> <a class="pagination__link" href="">1</a> </li>
-                                <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
-                                <li> <a class="pagination__link" href="">3</a> </li>
-                                <li> <a class="pagination__link" href="">...</a> </li>
-                                <li>
-                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
-                                </li>
-                                <li>
-                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
-                                </li>
-                            </ul>
-                            <select class="w-20 form-select box mt-3 sm:mt-0">
-                                <option>10</option>
-                                <option>25</option>
-                                <option>35</option>
-                                <option>50</option>
-                            </select>
                         </div>
                     </div>
                     <!-- END: Weekly Top Products -->
@@ -684,165 +448,11 @@
             <div class="col-span-12 xxl:col-span-3">
                 <div class="xxl:border-l border-theme-5 -mb-10 pb-10">
                     <div class="xxl:pl-6 grid grid-cols-12 gap-6">
-                        <!-- BEGIN: Transactions -->
-                        <div class="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-12 mt-3 xxl:mt-8">
-                            <div class="intro-x flex items-center h-10">
-                                <h2 class="text-lg font-medium truncate ml-5">
-                                    تراکنش ها
-                                </h2>
-                            </div>
-                            <div class="mt-5">
-                                <div class="intro-x">
-                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-14.jpg">
-                                        </div>
-                                        <div class="mr-4 ml-auto">
-                                            <div class="font-medium">کوین اسپیسی</div>
-                                            <div class="text-gray-600 text-xs mt-0.5">27 شهریور 1400</div>
-                                        </div>
-                                        <div class="text-theme-9">71+ تومان</div>
-                                    </div>
-                                </div>
-                                <div class="intro-x">
-                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-12.jpg">
-                                        </div>
-                                        <div class="mr-4 ml-auto">
-                                            <div class="font-medium">رابرت دنیرو</div>
-                                            <div class="text-gray-600 text-xs mt-0.5">11 مهر 1400</div>
-                                        </div>
-                                        <div class="text-theme-9">30+ تومان</div>
-                                    </div>
-                                </div>
-                                <div class="intro-x">
-                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-3.jpg">
-                                        </div>
-                                        <div class="mr-4 ml-auto">
-                                            <div class="font-medium">جان تراولتا</div>
-                                            <div class="text-gray-600 text-xs mt-0.5">14  آبان 1400</div>
-                                        </div>
-                                        <div class="text-theme-9">105+ تومان</div>
-                                    </div>
-                                </div>
-                                <div class="intro-x">
-                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-12.jpg">
-                                        </div>
-                                        <div class="mr-4 ml-auto">
-                                            <div class="font-medium">آرنولد شوایتگز</div>
-                                            <div class="text-gray-600 text-xs mt-0.5">16  آذر  1400</div>
-                                        </div>
-                                        <div class="text-theme-9">43+ تومان</div>
-                                    </div>
-                                </div>
-                                <div class="intro-x">
-                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-13.jpg">
-                                        </div>
-                                        <div class="mr-4 ml-auto">
-                                            <div class="font-medium">راسل کرو</div>
-                                            <div class="text-gray-600 text-xs mt-0.5">6 شهریور 1400</div>
-                                        </div>
-                                        <div class="text-theme-9">109+ تومان</div>
-                                    </div>
-                                </div>
-                                <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">مشاهده بیشتر</a>
-                            </div>
-                        </div>
-                        <!-- END: Transactions -->
-                        <!-- BEGIN: Recent Activities -->
-                        <div class="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-12 mt-3">
-                            <div class="intro-x flex items-center h-10">
-                                <h2 class="text-lg font-medium truncate ml-5">
-                                    فعالیت های اخیر
-                                </h2>
-                                <a href="" class="mr-auto text-theme-1 dark:text-theme-10 truncate"> بیشتر </a>
-                            </div>
-                            <div class="report-timeline mt-5 relative">
-                                <div class="intro-x relative flex items-center mb-3">
-                                    <div class="report-timeline__image">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-1.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="box px-5 py-3 mr-4 flex-1 zoom-in">
-                                        <div class="flex items-center">
-                                            <div class="font-medium">دنزل واشینگتون</div>
-                                            <div class="text-xs text-gray-500 mr-auto">07:00 صبح</div>
-                                        </div>
-                                        <div class="text-gray-600 mt-1"> به تیم پیوسته است </div>
-                                    </div>
-                                </div>
-                                <div class="intro-x relative flex items-center mb-3">
-                                    <div class="report-timeline__image">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-3.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="box px-5 py-3 mr-4 flex-1 zoom-in">
-                                        <div class="flex items-center">
-                                            <div class="font-medium">آرنولد شوایتگز</div>
-                                            <div class="text-xs text-gray-500 mr-auto">07:00 صبح</div>
-                                        </div>
-                                        <div class="text-gray-600">
-                                            <div class="mt-1"> 3 عکس جدید اضافه کرد </div>
-                                            <div class="flex mt-2">
-                                                <div class="tooltip w-8 h-8 image-fit ml-1 zoom-in" title="Dell XPS 13">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="dist/images/preview-7.jpg">
-                                                </div>
-                                                <div class="tooltip w-8 h-8 image-fit ml-1 zoom-in" title="Samsung Q90 QLED TV">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="dist/images/preview-2.jpg">
-                                                </div>
-                                                <div class="tooltip w-8 h-8 image-fit ml-1 zoom-in" title="Samsung Galaxy S20 Ultra">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="dist/images/preview-9.jpg">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="intro-x text-gray-500 text-xs text-center my-4">12 خرداد</div>
-                                <div class="intro-x relative flex items-center mb-3">
-                                    <div class="report-timeline__image">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-11.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="box px-5 py-3 mr-4 flex-1 zoom-in">
-                                        <div class="flex items-center">
-                                            <div class="font-medium">کیانو ریورز</div>
-                                            <div class="text-xs text-gray-500 mr-auto">07:00 صبح</div>
-                                        </div>
-                                        <div class="text-gray-600 mt-1"> تغییر <a class="text-theme-1 dark:text-theme-10" href="">سونی مستر سریز ای‌ناین‌جی</a> قیمت و توضیحات</div>
-                                    </div>
-                                </div>
-                                <div class="intro-x relative flex items-center mb-3">
-                                    <div class="report-timeline__image">
-                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="dist/images/profile-9.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="box px-5 py-3 mr-4 flex-1 zoom-in">
-                                        <div class="flex items-center">
-                                            <div class="font-medium">جانی دپ</div>
-                                            <div class="text-xs text-gray-500 mr-auto">07:00 صبح</div>
-                                        </div>
-                                        <div class="text-gray-600 mt-1"> تغییر <a class="text-theme-1 dark:text-theme-10" href="">نیکون ضد </a>  توضیحات</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END: Recent Activities -->
                         <!-- BEGIN: Important Notes -->
                         <div class="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3">
                             <div class="intro-x flex items-center h-10">
                                 <h2 class="text-lg font-medium truncate ml-auto">
-                                    یادداشت های مهم
+                                    پست های اخیر
                                 </h2>
                                 <button data-carousel="important-notes" data-target="prev" class="tiny-slider-navigator btn px-2 border-gray-400 text-gray-700 dark:text-gray-300 mr-2"> <i data-feather="chevron-right" class="w-4 h-4"></i> </button>
                                 <button data-carousel="important-notes" data-target="next" class="tiny-slider-navigator btn px-2 border-gray-400 text-gray-700 dark:text-gray-300 mr-2"> <i data-feather="chevron-left" class="w-4 h-4"></i> </button>
@@ -850,7 +460,18 @@
                             <div class="mt-5 intro-x">
                                 <div class="box zoom-in">
                                     <div class="tiny-slider" id="important-notes">
-                                        <div class="p-5">
+                                        @foreach($posts as $post)
+                                            <div class="p-5">
+                                                <div class="text-base font-medium truncate">{{$post->title}}</div>
+                                                <div class="text-gray-500 mt-1">{{$post->timestamps}}</div>
+                                                <div class="text-gray-600 text-right mt-1">{{$post->body}}</div>
+                                                <div class="font-medium flex mt-5">
+                                                    <button type="button" class="btn btn-outline-secondary py-1 px-2 ">زمان مطالعه:{{$post->studytime}}</button>
+                                                    <button type="button" class="btn btn-secondary py-1 px-2 ml-auto ml-auto">{{$post->creator}}</button>
+                                                </div>
+                                            </div>
+                                        @endforeach
+{{--                                        <div class="p-5">
                                             <div class="text-base font-medium truncate">لورم ایپسوم متن ساختگی با تولید سادگی</div>
                                             <div class="text-gray-500 mt-1"> 20 ساعت قبل </div>
                                             <div class="text-gray-600 text-right mt-1">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلیتکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</div>
@@ -867,113 +488,12 @@
                                                 <button type="button" class="btn btn-outline-secondary py-1 px-2 ">رد کردن</button>
                                                 <button type="button" class="btn btn-secondary py-1 px-2 ml-auto ml-auto">مشاهده نکته</button>
                                             </div>
-                                        </div>
-                                        <div class="p-5">
-                                            <div class="text-base font-medium truncate">لورم ایپسوم متن ساختگی با تولید سادگی</div>
-                                            <div class="text-gray-500 mt-1"> 20 ساعت قبل </div>
-                                            <div class="text-gray-600 text-right mt-1">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلیتکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</div>
-                                            <div class="font-medium flex mt-5">
-                                                <button type="button" class="btn btn-outline-secondary py-1 px-2 ">رد کردن</button>
-                                                <button type="button" class="btn btn-secondary py-1 px-2 ml-auto ml-auto">مشاهده نکته</button>
-                                            </div>
-                                        </div>
+                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- END: Important Notes -->
-                        <!-- BEGIN: Schedules -->
-                        <div class="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-12 xl:col-start-1 xl:row-start-2 xxl:col-start-auto xxl:row-start-auto mt-3">
-                            <div class="intro-x flex items-center h-10">
-                                <h2 class="text-lg font-medium truncate ml-5">
-                                    برنامه ها
-                                </h2>
-                                <a href="" class="mr-auto text-theme-1 dark:text-theme-10 truncate flex items-center"> <i data-feather="plus" class="w-4 h-4 ml-1"></i> افزودن برنامه های جدید </a>
-                            </div>
-                            <div class="mt-5">
-                                <div class="intro-x box">
-                                    <div class="p-5">
-                                        <div class="flex">
-                                            <i data-feather="chevron-right" class="w-5 h-5 text-gray-600"></i>
-                                            <div class="font-medium text-base mx-auto">مهر</div>
-                                            <i data-feather="chevron-left" class="w-5 h-5 text-gray-600"></i>
-                                        </div>
-                                        <div class="grid grid-cols-7 gap-4 mt-5 text-center cal">
-                                            <div class="font-medium">شنبه</div>
-                                            <div class="font-medium">یکشنبه</div>
-                                            <div class="font-medium">دوشنبه</div>
-                                            <div class="font-medium">سه‌شنبه</div>
-                                            <div class="font-medium">چهار‌شنبه</div>
-                                            <div class="font-medium">پنجشنبه</div>
-                                            <div class="font-medium">جمعه</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">29</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">30</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">31</div>
-                                            <div class="py-0.5 rounded relative">1</div>
-                                            <div class="py-0.5 rounded relative">2</div>
-                                            <div class="py-0.5 rounded relative">3</div>
-                                            <div class="py-0.5 rounded relative">4</div>
-                                            <div class="py-0.5 rounded relative">5</div>
-                                            <div class="py-0.5 bg-theme-29 dark:bg-theme-10 rounded relative">6</div>
-                                            <div class="py-0.5 rounded relative">7</div>
-                                            <div class="py-0.5 bg-theme-26 dark:bg-theme-17 text-white rounded relative">8</div>
-                                            <div class="py-0.5 rounded relative">9</div>
-                                            <div class="py-0.5 rounded relative">10</div>
-                                            <div class="py-0.5 rounded relative">11</div>
-                                            <div class="py-0.5 rounded relative">12</div>
-                                            <div class="py-0.5 rounded relative">13</div>
-                                            <div class="py-0.5 rounded relative">14</div>
-                                            <div class="py-0.5 rounded relative">15</div>
-                                            <div class="py-0.5 rounded relative">16</div>
-                                            <div class="py-0.5 rounded relative">17</div>
-                                            <div class="py-0.5 rounded relative">18</div>
-                                            <div class="py-0.5 rounded relative">19</div>
-                                            <div class="py-0.5 rounded relative">20</div>
-                                            <div class="py-0.5 rounded relative">21</div>
-                                            <div class="py-0.5 rounded relative">22</div>
-                                            <div class="py-0.5 bg-theme-30 dark:bg-theme-22 rounded relative">23</div>
-                                            <div class="py-0.5 rounded relative">24</div>
-                                            <div class="py-0.5 rounded relative">25</div>
-                                            <div class="py-0.5 rounded relative">26</div>
-                                            <div class="py-0.5 bg-theme-31 dark:bg-theme-23 rounded relative">27</div>
-                                            <div class="py-0.5 rounded relative">28</div>
-                                            <div class="py-0.5 rounded relative">29</div>
-                                            <div class="py-0.5 rounded relative">30</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">1</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">2</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">3</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">4</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">5</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">6</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">7</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">8</div>
-                                            <div class="py-0.5 rounded relative text-gray-600">9</div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-dark-5 p-5">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-theme-11 rounded-full ml-3"></div>
-                                            <span class="truncate">UI/UX ورکشاپ</span>
-                                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                            <span class="font-medium xl:mr-auto">23ام</span>
-                                        </div>
-                                        <div class="flex items-center mt-4">
-                                            <div class="w-2 h-2 bg-theme-1 dark:bg-theme-10 rounded-full ml-3"></div>
-                                            <span class="truncate">VueJs توسعه فرانت با</span>
-                                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                            <span class="font-medium xl:mr-auto">10ام</span>
-                                        </div>
-                                        <div class="flex items-center mt-4">
-                                            <div class="w-2 h-2 bg-theme-12 rounded-full ml-3"></div>
-                                            <span class="truncate">لاراول ای پی ا رست</span>
-                                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                            <span class="font-medium xl:mr-auto">31ام</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END: Schedules -->
                     </div>
                 </div>
             </div>

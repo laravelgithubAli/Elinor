@@ -112,6 +112,7 @@ class Product extends Model
 
     public function HasStar()
     {
-        return Star::query()->where('product_id',$this->id)->firstOrFail();
+        $star= Star::query()->where('product_id',$this->id)->firstOrFail();
+        return $star->value;
     }
 }

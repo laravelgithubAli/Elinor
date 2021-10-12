@@ -42,9 +42,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('image')->storeAs(
-          'public/posts', $request->file('image')->getClientOriginalName()
-        );
+        $path = null;
+
+        if ($request->hasFile('image')){
+            $path = $request->file('image')->storeAs(
+                'public/posts', $request->file('image')->getClientOriginalName());
+        }
 
         Post::query()->create([
            'postcategory_id' => $request->get('postcategory_id'),

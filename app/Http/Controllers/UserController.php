@@ -31,7 +31,7 @@ class UserController extends Controller
 
        auth()->login($User);
 
-       return redirect('/adminpanel');
+       return redirect(route('admin.home'));
 
     }
 
