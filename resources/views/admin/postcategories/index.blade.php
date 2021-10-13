@@ -1,8 +1,11 @@
 @extends('admin.layout.master')
 
+@section('topfield')
+    <div class="-intro-x breadcrumb ml-auto hidden sm:flex"> <a href="">دسته بندی پست</a> <i data-feather="chevron-left" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">لیست</a> </div>
+@endsection
+
 @section('content')
 
-    <div class="content">
         <div
             class="report-box-3 report-box-3--content grid grid-cols-12 gap-6 xl:-mt-5 xxl:-mt-8 -mb-10 z-40 xxl:z-10">
             <div class="col-span-12 xxl:col-span-9">
@@ -88,7 +91,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
 
 @endsection
