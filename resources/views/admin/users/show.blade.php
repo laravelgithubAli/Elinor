@@ -12,24 +12,7 @@
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button class="btn btn-primary shadow-md ml-2">افزودن کاربر جدید</button>
-            <div class="dropdown">
-                <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
-                        <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4"
-                                                                                   data-feather="plus"></i> </span>
-                </button>
-                <div class="dropdown-menu w-40">
-                    <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                        <a href=""
-                           class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
-                            <i data-feather="users" class="w-4 h-4 ml-2"></i> افزودن گروه </a>
-                        <a href=""
-                           class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
-                            <i data-feather="message-circle" class="w-4 h-4 ml-2"></i> ارسال پیام</a>
-                    </div>
-                </div>
-            </div>
-
+            <button class="btn btn-primary shadow-md ml-2">ارسال پیام</button>
         </div>
 
         <!-- BEGIN: Users Layout -->
@@ -49,7 +32,6 @@
                         </div>
                         <div class="flex mt-4 lg:mt-0">
                             <button class="btn btn-primary py-1 px-2 ml-2">پیام</button>
-                            <button class="btn btn-outline-secondary py-1 px-2">پروفایل</button>
                         </div>
                     </div>
                 </div>

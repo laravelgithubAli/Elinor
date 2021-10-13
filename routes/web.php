@@ -40,6 +40,9 @@ Route::get('/login',[UserController::class, 'index'])->name('login');
 Route::post('Elinor/login/store',[UserController::class, 'login'])->name('login.store');
 Route::post('/logout',[UserController::class, 'logout'])->name('logout');
 
+Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
+Route::patch('/users/{user}',[UserController::class, 'update'])->name('users.update');
+
 
 Route::prefix('/adminpanel')->group(function () {
 
@@ -68,5 +71,6 @@ Route::prefix('/adminpanel')->group(function () {
     Route::post('stars/productquestions/{productquestion}',[StarController::class,'productquestionStore'])->name('stars.productquestions.store');
 
     Route::resource('sliders',SliderController::class);
+
 
 });

@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->bigInteger('number')->unique();
             $table->string('password');
+            $table->string('job')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

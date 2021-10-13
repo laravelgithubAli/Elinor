@@ -253,95 +253,7 @@
             <!-- BEGIN: Breadcrumb -->
             @yield('topfield')
             <!-- END: Breadcrumb -->
-            <!-- BEGIN: Search -->
-            <div class="intro-x relative ml-3 sm:ml-6">
-                <div class="search hidden sm:block">
-                    <input type="text" class="search__input form-control border-transparent placeholder-theme-13" placeholder="جستجو...">
-                    <i data-feather="search" class="search__icon dark:text-gray-300"></i>
-                </div>
-                <a class="notification sm:hidden" href=""> <i data-feather="search" class="notification__icon dark:text-gray-300"></i> </a>
-                <div class="search-result">
-                    <div class="search-result__content">
-                        <div class="search-result__content__title">صفحات</div>
-                        <div class="mb-5">
-                            <a href="" class="flex items-center">
-                                <div class="w-8 h-8 bg-theme-18 text-theme-9 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="inbox"></i> </div>
-                                <div class="mr-3">تنظیمات ایمیل</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 bg-theme-17 text-theme-11 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="users"></i> </div>
-                                <div class="mr-3">کاربران و دسترسی</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 bg-theme-14 text-theme-10 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="credit-card"></i> </div>
-                                <div class="mr-3">گزارش تراکنش ها</div>
-                            </a>
-                        </div>
-                        <div class="search-result__content__title">کاربران</div>
-                        <div class="mb-5">
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-4.jpg">
-                                </div>
-                                <div class="mr-3">جانی دپ</div>
-                                <div class="mr-auto truncate text-gray-600 text-xs text-left">johnnydepp@left4code.com</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-15.jpg">
-                                </div>
-                                <div class="mr-3">لئوناردو دیکاپریو</div>
-                                <div class="mr-auto truncate text-gray-600 text-xs text-left">leonardodicaprio@left4code.com</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-15.jpg">
-                                </div>
-                                <div class="mr-3">کیانو ریورز</div>
-                                <div class="mr-auto truncate text-gray-600 text-xs text-left">keanureeves@left4code.com</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-5.jpg">
-                                </div>
-                                <div class="mr-3">جان تراولتا</div>
-                                <div class="mr-auto truncate text-gray-600 text-xs text-left">johntravolta@left4code.com</div>
-                            </a>
-                        </div>
-                        <div class="search-result__content__title">محصولات</div>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-1.jpg">
-                            </div>
-                            <div class="mr-3">نیکون ضد </div>
-                            <div class="mr-auto truncate text-gray-600 text-xs text-left">عکاسی</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-11.jpg">
-                            </div>
-                            <div class="mr-3">دل ایکس‌پی‌اس </div>
-                            <div class="mr-auto truncate text-gray-600 text-xs text-left">کامپیوتر و لپ تاپ</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-8.jpg">
-                            </div>
-                            <div class="mr-3">سامسونگ کیوناین تی‌وی</div>
-                            <div class="mr-auto truncate text-gray-600 text-xs text-left">الکترونیک</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-11.jpg">
-                            </div>
-                            <div class="mr-3">نیکون ضد </div>
-                            <div class="mr-auto truncate text-gray-600 text-xs text-left">عکاسی</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- END: Search -->
-            <!-- BEGIN: Notifications -->
+           <!-- BEGIN: Notifications -->
             <div class="intro-x dropdown  sm:ml-6">
                 <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button" aria-expanded="false"> <i data-feather="bell" class="notification__icon dark:text-gray-300"></i> </div>
                 <div class="notification-content pt-2 dropdown-menu">
@@ -422,23 +334,23 @@
             <!-- BEGIN: Account Menu -->
             <div class="intro-x dropdown w-8 h-8">
                 <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false">
-                    <img alt="Rubick Tailwind HTML Admin Template" src="/dist/images/profile-10.jpg">
+                    <img alt="Rubick Tailwind HTML Admin Template" src="{{url('')}}/dist/images/profile-10.jpg">
                 </div>
                 <div class="dropdown-menu w-56">
                     <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
                         <div class="p-4 border-b border-theme-27 dark:border-dark-3">
-                            <div class="font-medium">جانی دپ</div>
-                            <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">مهندس دواپس</div>
+                            <div class="font-medium">{{auth()->user()->name}} {{auth()->user()->lastname}}</div>
+                            <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">{{auth()->user()->job}}</div>
                         </div>
                         <div class="p-2">
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="user" class="w-4 h-4 ml-2"></i> پروفایل </a>
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="edit" class="w-4 h-4 ml-2"></i> افزودن اکانت </a>
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="lock" class="w-4 h-4 ml-2"></i>بازیابی رمزعبور</a>
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="help-circle" class="w-4 h-4 ml-2"></i>راهنمایی</a>
+                            <a href="{{route('users.edit',auth()->user())}}" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="user" class="w-4 h-4 ml-2"></i> پروفایل </a>
                         </div>
-                        <div class="p-2 border-t border-theme-27 dark:border-dark-3">
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 ml-2"></i>خروج</a>
-                        </div>
+                        <form action="{{route('logout')}}" method="post" >
+                            @csrf
+                            <div class="p-2 border-t border-theme-27 dark:border-dark-3">
+                                <button type="submit" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 ml-2"></i>خروج</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

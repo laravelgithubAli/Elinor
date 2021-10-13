@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -60,7 +61,9 @@ class UserController extends Controller
             'email' => $request->get('email'),
             'number' => $request->get('number'),
             'password' => bcrypt($request->get('password')),
-            'role_id' => Role::findByTitle('user')->id
+            'role_id' => Role::findByTitle('user')->id,
+            'image' => null,
+            'job' => null
         ]);
 
         auth()->login($User);
@@ -89,7 +92,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.edit',[
+            'user' => $user
+        ]);
     }
 
     /**
@@ -101,7 +106,26 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $path = $user->image;
+
+        if ($request->hasFile('image')){
+            Storage::delete($user->image);
+            $path = $request->file('image')->storeAs(
+              'public/users',$request->file('image')->getClientOriginalName());
+        }
+
+        $user->update([
+            'name' => $request->get('name',$user->name),
+            'lastname' => $request->get('lastname',$user->lastname),
+            'email' => $request->get('email',$user->email),
+            'number' => $request->get('number',$user->number),
+            'password' => bcrypt($request->get('password')),
+            'role_id' => Role::findByTitle('user')->id,
+            'image' => $path,
+            'job' => $request->get('job')
+        ]);
+
+        return redirect(route('admin.home'));
     }
 
     /**
