@@ -76,6 +76,8 @@
                         </div>
                     </div>
                 </div>
+                @include('admin.layout.errors')
+                <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
             </div>
 
             <div class="intro-y col-span-12 lg:col-span-6">
@@ -90,16 +92,14 @@
                         <div class="intro-y col-span-12 lg:col-span-6">
                             <label for="ww" class="font-medium text-base mb-2"> تصویر
                                 فعلی </label><br>
-                            <img id="ww" src="{{url('/storage/app/'.$product->image)}}"
+                            <img id="ww" {{--src="{{url('/storage/app/'.$product->image)}}"--}}
+                                  src="{{str_replace('public' , '/storage',$product->image)}}"
                                  width="200"
                                  alt="">
                         </div>
                     </div>
                 </div>
             </div>
-
-            @include('admin.layout.errors')
-            <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
         </div>
         <!-- END: Vertical Form -->
     </form>

@@ -6,11 +6,11 @@
 
 @section('content')
 
-        <form action="{{route('categories.store')}}" method="post"  enctype="multipart/form-data">
+
+
+    <form action="{{route('categories.store')}}" method="post"  enctype="multipart/form-data">
         @csrf
         <!-- BEGIN: Vertical Form -->
-
-
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base">
                     ایجاد دسته بندی
@@ -45,12 +45,15 @@
                                        placeholder="نام دسته بندی را وارد کنید ">
                             </div>
                         </div>
+
                     </div>
+
+
 
 
                     <div id="vertical-form" class="p-5">
                         <div class="preview">
-                            <label for="category_id" class="form-label">انتخاب گروه مشخصات</label>
+                            <label for="category_id" class="form-label">انتخاب گروه ویژگی ها</label>
                             @foreach($propertygroups as $propertygroup)
                                 <div class="float-none">
                                     <input type="checkbox" name="propertygroups[]"
@@ -62,10 +65,13 @@
                                 </div>
                             @endforeach
                         </div>
+                        @include('admin.layout.errors')
+                        <input type="submit" class="btn btn-primary mt-5 form-control " value="ثبت">
                     </div>
-                    <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                 </div>
                 <div class="intro-y col-span-12 lg:col-span-6">
+
+
                     <!-- BEGIN: Single File Upload -->
                     <div class="intro-y ">
                         <div class="flex flex-col sm:flex-row items-center p-3 border-b border-gray-200 dark:border-dark-5">
@@ -89,6 +95,5 @@
             </div>
             <!-- END: Vertical Form -->
         </form>
-
 
 @endsection

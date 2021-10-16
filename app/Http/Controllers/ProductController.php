@@ -42,9 +42,9 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductUpdate $request)
     {
-        $path = null;
+        $path = "public/products/placeholder.jpg";
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->storeAs(
@@ -96,7 +96,7 @@ class ProductController extends Controller
      * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductUpdateRequest $request, Product $product)
     {
         $path = $product->image;
 

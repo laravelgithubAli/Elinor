@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostcategoryRequest;
 use App\Models\category;
 use App\Models\Postcategory;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class PostcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostcategoryRequest $request)
     {
         Postcategory::query()->create([
            'title' => $request->get('title')
@@ -78,7 +79,7 @@ class PostcategoryController extends Controller
      * @param  \App\Models\Postcategory  $postcategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Postcategory $postcategory)
+    public function update(PostcategoryRequest $request, Postcategory $postcategory)
     {
         $postcategory->update([
             'title' => $request->get('title',$postcategory->title)

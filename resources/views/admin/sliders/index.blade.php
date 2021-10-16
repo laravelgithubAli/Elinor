@@ -19,6 +19,7 @@
                     <input type="file" name="image">
                 </div>
                 <br>
+                @include('admin.layout.errors')
                 <input type="submit" value="ثبت" class="form-control btn btn-primary">
             </form>
 

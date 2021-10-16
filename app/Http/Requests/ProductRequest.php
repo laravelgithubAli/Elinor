@@ -28,7 +28,22 @@ class ProductRequest extends FormRequest
             'name' => ['required'],
             'cost' => ['required','integer'],
             'image' => ['required'],
-            'description' => ['required']
+            'description' => ['required'],
+            'inventory' => ['nullable','integer'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+           'category_id.required' => 'انتخاب دسته بندی الزامی است!',
+           'name.required' => 'نوشتن نام محصول الزامی است!',
+           'cost.required' => 'نوشتن قیمت الزامی است!',
+           'cost.integer' => 'قیمت باید از نوع عدد باشد!',
+           'image.required' => 'آپلود تصویر الزامی است!',
+           'description.required' => 'نوشتن توضیح الزامی است!',
+           'inventory.integer' => 'موجودی انبار باید از نوع عدد باشد!',
+
         ];
     }
 }

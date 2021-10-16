@@ -28,7 +28,8 @@
                             <input type="text" name="title" id="title" class="form-control bg-white"
                                    value="{{$role->title}}">
                         </div>
-                        <input type="submit" class="btn btn-primary mt-5" value="ثبت">
+                        @include('admin.layout.errors')
+                        <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                     </div>
                 </div>
             </div>

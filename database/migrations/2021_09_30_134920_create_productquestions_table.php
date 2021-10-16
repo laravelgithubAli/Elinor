@@ -19,7 +19,7 @@ class CreateProductquestionsTable extends Migration
             $table->foreignId('product_id')->nullable()->constrained();
             $table->foreignId('user_id')->constrained();
             $table->text('title');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('status');
             $table->timestamps();
         });

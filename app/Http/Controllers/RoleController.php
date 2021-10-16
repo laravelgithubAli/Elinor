@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RoleRequest;
 use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -27,9 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('admin.roles.create',[
-            'permissions' => Permission::all()
-        ])->with(['activity6' => 'side-menu--active', 'submenu6' => 'side-menu__sub-open']);
+        return view('admin.roles.create')->with(['activity6' => 'side-menu--active', 'submenu6' => 'side-menu__sub-open']);
     }
 
     /**
@@ -38,13 +37,11 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
         $role = Role::query()->create([
             'title' => $request->get('title')
         ]);
-
-        $role->permissions()->attach($request->get('permissions'));
 
         return redirect(route('roles.index'));
     }
@@ -70,7 +67,6 @@ class RoleController extends Controller
     {
         return view('admin.roles.edit',[
             'role' => $role,
-            'permissions' => Permission::all()
         ]);
     }
 
@@ -81,13 +77,11 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
+    public function update(RoleRequest $request, Role $role)
     {
         $role->update([
             'title' => $request->get('title')
         ]);
-
-        $role->permissions()->sync($request->get('permissions'));
 
         return redirect(route('roles.index'));
     }
@@ -100,8 +94,6 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        $role->permissions()->detach();
-
         $role->delete();
         return redirect(route('roles.index'));
     }

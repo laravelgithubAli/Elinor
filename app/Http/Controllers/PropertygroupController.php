@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertygroupRequest;
 use App\Models\Propertygroup;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class PropertygroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropertygroupRequest $request)
     {
         Propertygroup::query()->create([
            'title' => $request->get('title')
@@ -76,7 +77,7 @@ class PropertygroupController extends Controller
      * @param  \App\Models\Propertygroup  $propertygroup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propertygroup $propertygroup)
+    public function update(PropertygroupRequest $request, Propertygroup $propertygroup)
     {
         $propertygroup->update([
            'title' => $request->get('title',$propertygroup->title)

@@ -21,8 +21,7 @@
                             <table class="table table-report sm:mt-2">
                                 <thead>
                                 <tr>
-                                    <th class="whitespace-nowrap">#</th>
-                                    <th class="whitespace-nowrap">محصول</th>
+                                    <th class="whitespace-nowrap">محصول/پست</th>
                                     <th class="whitespace-nowrap">کامنت</th>
                                     <th class="whitespace-nowrap">پاسخ</th>
                                     <th class="whitespace-nowrap"> فعال کردن </th>
@@ -32,7 +31,6 @@
                                 <tbody>
                                 @foreach($productquestions as $productquestion)
                                     <tr class="intro-x">
-                                        <td>{{$productquestion->id}}</td>
                                         <td>
                                             {{$productquestion->Hastitle()}}
                                         </td>
@@ -74,11 +72,10 @@
                                                 <form action="{{route('productquestions.destroy',$productquestion)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="" class=" flex items-center text-theme-6">
-                                                        <input type="submit" class="btn" value="حذف"><i
+                                                        <button type="submit" class="btn btn-danger"><i
                                                                 data-feather="trash-2"
-                                                                class="w-7 h-7 ml-1"></i>
-                                                    </a>
+                                                                class="w-7 h-7"></i>
+                                                        </button>
                                                 </form>
                                             </div>
                                         </td>

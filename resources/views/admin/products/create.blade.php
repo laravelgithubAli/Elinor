@@ -56,9 +56,9 @@
                         <textarea name="description" id="description" class="form-control"></textarea>
                     </div>
                     <br>
-
-                    <input type="submit" class="btn btn-primary mt-5" value="ثبت">
                     @include('admin.layout.errors')
+                    <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
+
                 </div>
 
                 <div class="intro-y col-span-12 lg:col-span-6">

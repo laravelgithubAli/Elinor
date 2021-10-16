@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Postcategory;
 use Illuminate\Http\Request;
@@ -40,9 +41,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        $path = null;
+        $path = "public/posts/placeholder.jpg";
 
         if ($request->hasFile('image')){
             $path = $request->file('image')->storeAs(
@@ -93,7 +94,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
         $path = $post->image;
 

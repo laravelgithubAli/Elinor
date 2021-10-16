@@ -69,8 +69,9 @@
                                 </div>
                             @endforeach
                         </div>
+                        @include('admin.layout.errors')
+                        <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                     </div>
-                    <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                 </div>
 
                 <div class="intro-y col-span-12 lg:col-span-6">

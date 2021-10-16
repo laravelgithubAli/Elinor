@@ -46,7 +46,7 @@
                 <br>
 
                 @include('admin.layout.errors')
-                <input type="submit" class="btn btn-primary mt-5 " value="ثبت">
+                <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
             </div>
             <div class="intro-y col-span-12 lg:col-span-6">
                 <br>

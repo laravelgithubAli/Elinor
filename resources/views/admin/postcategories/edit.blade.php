@@ -23,7 +23,8 @@
                         <input id="title" name="title" type="text" class="form-control"
                                placeholder="نام دسته بندی را وارد کنید " value="{{$postcategory->title}}">
                     </div>
-                    <input type="submit" class="btn btn-primary mt-5" value="ثبت">
+                    @include('admin.layout.errors')
+                    <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                 </div>
 
             </div>

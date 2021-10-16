@@ -26,26 +26,11 @@
                             <input type="text" name="title" id="title" class="form-control bg-white">
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-primary mt-5" value="ثبت">
+                    @include('admin.layout.errors')
+                    <input type="submit" class="btn btn-primary mt-5 form-control" value="ثبت">
                 </div>
 
 
-            </div>
-            <div class="intro-y col-span-12 lg:col-span-6">
-                <div id="vertical-form" class="p-5">
-                    <div class="preview">
-                        <label for="category_id" class="font-medium text-base">انتخاب دسترسی ها</label><br><br>
-                        @foreach($permissions as $permission)
-                            <div class="float-none">
-                                <input type="checkbox" name="permissions[]"
-                                       value="{{$permission->id}}" id="{{$permission->id}}" class="form-check-input">
-                                <label for="{{$permission->id}}">
-                                    {{$permission->label}}
-                                </label>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
             </div>
         </div>
 

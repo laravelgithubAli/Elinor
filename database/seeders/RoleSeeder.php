@@ -19,10 +19,14 @@ class RoleSeeder extends Seeder
            'title' => 'admin'
         ]);
 
-        $admin->permissions()->attach(Permission::all());
 
         Role::query()->insert([
-           'title' => 'user'
+           [
+               'title' => 'user'
+           ],
+            [
+                'title' => 'writer'
+            ]
         ]);
     }
 }

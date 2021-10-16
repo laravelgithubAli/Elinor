@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertyRequest;
 use App\Models\Property;
 use App\Models\Propertygroup;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropertyRequest $request)
     {
         Property::query()->create([
            'propertygroup_id' => $request->get('propertygroup_id'),
@@ -80,7 +81,7 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(PropertyRequest $request, Property $property)
     {
         $property->update([
             'title' => $request->get('title',$property->title),

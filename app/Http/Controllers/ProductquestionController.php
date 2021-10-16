@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductquestionRequest;
 use App\Models\Answer;
 use App\Models\Post;
 use App\Models\Product;
@@ -45,11 +46,13 @@ class ProductquestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Product $product)
+    public function store(ProductquestionRequest $request, Product $product)
     {
-        $path = $request->file('image')->storeAs(
-            'public/productquestion',$request->file('image')->getClientOriginalName()
-        );
+        $path = "public/productquestion/placeholder.jpg";
+        if ($request->hasFile('image')){
+            $path = $request->file('image')->storeAs(
+                'public/productquestion',$request->file('image')->getClientOriginalName());
+        }
 
         Productquestion::query()->create([
            'title' => $request->get('title'),

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\category;
 use App\Models\Propertygroup;
 use Illuminate\Http\Request;
@@ -16,9 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index',[
+        return view('admin.categories.index', [
             'categories' => category::all()
-        ])->with(['activity' => 'side-menu--active','submenu' => 'side-menu__sub-open']);
+        ])->with(['activity' => 'side-menu--active', 'submenu' => 'side-menu__sub-open']);
     }
 
     /**
@@ -28,31 +29,33 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create',[
+        return view('admin.categories.create', [
             'categories' => category::all(),
             'propertygroups' => Propertygroup::all()
-        ])->with(['activity' => 'side-menu--active','submenu' => 'side-menu__sub-open']);
+        ])->with(['activity' => 'side-menu--active', 'submenu' => 'side-menu__sub-open']);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        $path = $request->file('image')->storeAs(
-          'public/categories',$request->file('image')->getClientOriginalName()
-        );
+        $path = "public/categories/placeholder.jpg";
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->storeAs(
+                'public/categories', $request->file('image')->getClientOriginalName());
+        }
 
-       $category = category::query()->create([
-           'title' => $request->get('title'),
+        $category = category::query()->create([
+            'title' => $request->get('title'),
             'category_id' => $request->get('category_id'),
             'image' => $path
         ]);
 
-       $category->propertygroups()->attach($request->get('propertygroups'));
+        $category->propertygroups()->attach($request->get('propertygroups'));
 
         return redirect(route('categories.index'));
     }
@@ -60,7 +63,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param \App\Models\category $category
      * @return \Illuminate\Http\Response
      */
     public function show(category $category)
@@ -71,13 +74,13 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param \App\Models\category $category
      * @return \Illuminate\Http\Response
      */
     public function edit(category $category)
     {
-        return view('admin.categories.edit',[
-           'category' => $category,
+        return view('admin.categories.edit', [
+            'category' => $category,
             'categories' => category::all(),
             'propertygroups' => Propertygroup::all()
         ]);
@@ -86,24 +89,24 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(CategoryRequest $request, category $category)
     {
 
         $path = $category->image;
 
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $path = $request->file('image')->storeAs(
-                'public/products',$request->file('image')->getClientOriginalName()
+                'public/products', $request->file('image')->getClientOriginalName()
             );
         }
 
         $category->update([
-           'title' => $request->get('title',$category->title),
-            'category_id' => $request->get('category_id',$category),
+            'title' => $request->get('title', $category->title),
+            'category_id' => $request->get('category_id', $category),
             'image' => $path
         ]);
 
@@ -115,7 +118,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\category  $category
+     * @param \App\Models\category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(category $category)
