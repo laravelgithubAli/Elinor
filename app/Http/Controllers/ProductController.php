@@ -42,7 +42,7 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductUpdate $request)
+    public function store(ProductRequest $request)
     {
         $path = "public/products/placeholder.jpg";
 

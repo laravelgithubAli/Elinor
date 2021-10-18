@@ -9,6 +9,7 @@ use App\Http\Controllers\PictureController;
 use App\Http\Controllers\PostcategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Client\ProductController as ClientProductController;
 use App\Http\Controllers\ProductPropertyController;
 use App\Http\Controllers\ProductquestionController;
 use App\Http\Controllers\PropertyController;
@@ -30,18 +31,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
+
+    Route::get('/',[HomeController::class, 'index'])->name('home');
+    Route::get('/products/{product}', [ClientProductController::class , 'show'])->name('client.products.show');
 
 
-Route::get('/register',[UserController::class ,'create'])->name('register');
-Route::post('/register/store',[UserController::class ,'store'])->name('register.store');
 
-Route::get('/login',[UserController::class, 'index'])->name('login');
-Route::post('Elinor/login/store',[UserController::class, 'login'])->name('login.store');
-Route::post('/logout',[UserController::class, 'logout'])->name('logout');
+    Route::get('/register',[UserController::class ,'create'])->name('register');
+    Route::post('/register/store',[UserController::class ,'store'])->name('register.store');
 
-Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
-Route::patch('/users/{user}',[UserController::class, 'update'])->name('users.update');
+    Route::get('/login',[UserController::class, 'index'])->name('login');
+    Route::post('Elinor/login/store',[UserController::class, 'login'])->name('login.store');
+    Route::post('/logout',[UserController::class, 'logout'])->name('logout');
+
+    Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
+    Route::patch('/users/{user}',[UserController::class, 'update'])->name('users.update');
 
 
 Route::prefix('/adminpanel')->middleware(['auth','writerMiddleware'])->group(function () {
@@ -71,6 +75,4 @@ Route::prefix('/adminpanel')->middleware(['auth','writerMiddleware'])->group(fun
     Route::post('stars/productquestions/{productquestion}',[StarController::class,'productquestionStore'])->name('stars.productquestions.store')->withoutMiddleware('writerMiddleware');
 
     Route::resource('sliders',SliderController::class);
-
-
 });

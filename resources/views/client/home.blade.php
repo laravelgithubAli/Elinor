@@ -114,124 +114,126 @@
 
                         <div class="sub-menu">
                             <ul class="sub-menu-list">
-{{--                                @if($category->has_children)--}}
-                                    @foreach($category->children as $subcategory)
-                                        <li class="sub-menu-item">
+                                {{--                                @if($category->has_children)--}}
+                                @foreach($category->children as $subcategory)
+                                    <li class="sub-menu-item">
 
-                                            <img src="{{str_replace('public' , '/storage',$subcategory->image)}}">
-                                            <span>{{$subcategory->title}}</span>
+                                        <img src="{{str_replace('public' , '/storage',$subcategory->image)}}">
+                                        <span>{{$subcategory->title}}</span>
 
-                                            <div class="sub-sub-menu">
-                                                <div class="sub-sub-menu-list">
-                                                    <div class="sub-sub-menu-link">
-                                                        <a href="#">خرید لباس زنانه</a>
-                                                        <span class="material-icons">chevron_left</span>
-                                                    </div>
-
-                                                    <ul class="sub-sub-menu-items">
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                        <li class="sub-sub-menu-item">
-                                                            <a href="#">تی‌شرت زنانه</a>
-                                                        </li>
-                                                    </ul>
+                                        <div class="sub-sub-menu">
+                                            <div class="sub-sub-menu-list">
+                                                <div class="sub-sub-menu-link">
+                                                    <a href="#">خرید {{$subcategory->title}}</a>
+                                                    <span class="material-icons">chevron_left</span>
                                                 </div>
 
-                                                <div class="sub-sub-menu-brands">
-                                                    <div class="sub-sub-menu-brands-link">
-                                                        <span>برترین برندهای لباس زنانه</span>
-                                                    </div>
+                                                <ul class="sub-sub-menu-items">
+                                                    @foreach($subcategory->products as $product)
+                                                        <li class="sub-sub-menu-item">
+                                                            <a href="#">{{$product->name}}</a>
+                                                        </li>
+                                                    @endforeach
+{{--                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
 
-                                                    <div class="sub-sub-menu-brands-list">
-                                                        <div class="sub-sub-menu-brands-items">
-                                                            <a href="#" class="sub-sub-menu-brands-item">
-                                                                <img src="/Client/assets/image/brand.jpg">
-                                                            </a>
-                                                            <a href="#" class="sub-sub-menu-brands-item">
-                                                                <img src="/Client/assets/image/brand.jpg">
-                                                            </a>
-                                                            <a href="#" class="sub-sub-menu-brands-item">
-                                                                <img src="/Client/assets/image/brand.jpg">
-                                                            </a>
-                                                            <a href="#" class="sub-sub-menu-brands-item">
-                                                                <img src="/Client/assets/image/brand.jpg">
-                                                            </a>
-                                                        </div>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>
+                                                    <li class="sub-sub-menu-item">
+                                                        <a href="#">تی‌شرت زنانه</a>
+                                                    </li>--}}
+                                                </ul>
+                                            </div>
 
-                                                        <a class="sub-sub-menu-brands-list-link">
-                                                            <span>مشاهده همه برندها</span>
-                                                            <span class="material-icons">chevron_left</span>
+                                            <div class="sub-sub-menu-brands">
+                                                <div class="sub-sub-menu-brands-link">
+                                                    <span>برترین برندهای لباس زنانه</span>
+                                                </div>
+
+                                                <div class="sub-sub-menu-brands-list">
+                                                    <div class="sub-sub-menu-brands-items">
+                                                        <a href="#" class="sub-sub-menu-brands-item">
+                                                            <img src="/Client/assets/image/brand.jpg">
+                                                        </a>
+                                                        <a href="#" class="sub-sub-menu-brands-item">
+                                                            <img src="/Client/assets/image/brand.jpg">
+                                                        </a>
+                                                        <a href="#" class="sub-sub-menu-brands-item">
+                                                            <img src="/Client/assets/image/brand.jpg">
+                                                        </a>
+                                                        <a href="#" class="sub-sub-menu-brands-item">
+                                                            <img src="/Client/assets/image/brand.jpg">
                                                         </a>
                                                     </div>
+
+                                                    <a class="sub-sub-menu-brands-list-link">
+                                                        <span>مشاهده همه برندها</span>
+                                                        <span class="material-icons">chevron_left</span>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </li>
-                                    @endforeach
-{{--                                @endif--}}
+                                        </div>
+                                    </li>
+                                @endforeach
+                                {{--                                @endif--}}
 
-{{--
-                                <li class="sub-menu-item">
-                                    <img src="/Client/assets/image/bag.png">
-                                    <span>کیف</span>
+                                {{--
+                                                                <li class="sub-menu-item">
+                                                                    <img src="/Client/assets/image/bag.png">
+                                                                    <span>کیف</span>
 
-                                    <div>
+                                                                    <div>
 
-                                    </div>
-                                </li>
+                                                                    </div>
+                                                                </li>
 
-                                <li class="sub-menu-item">
-                                    <img src="/Client/assets/image/shoes.png">
-                                    <span>کفش</span>
+                                                                <li class="sub-menu-item">
+                                                                    <img src="/Client/assets/image/shoes.png">
+                                                                    <span>کفش</span>
 
-                                    <div>
+                                                                    <div>
 
-                                    </div>
-                                </li>
+                                                                    </div>
+                                                                </li>
 
-                                <li class="sub-menu-item">
-                                    <img src="/Client/assets/image/accessory.png">
-                                    <span>اکسسوری</span>
+                                                                <li class="sub-menu-item">
+                                                                    <img src="/Client/assets/image/accessory.png">
+                                                                    <span>اکسسوری</span>
 
-                                    <div>
+                                                                    <div>
 
-                                    </div>
-                                </li>
+                                                                    </div>
+                                                                </li>
 
-                                <li class="sub-menu-item">
-                                    <img src="/Client/assets/image/sport.png">
-                                    <span>ورزشی</span>
+                                                                <li class="sub-menu-item">
+                                                                    <img src="/Client/assets/image/sport.png">
+                                                                    <span>ورزشی</span>
 
-                                    <div>
+                                                                    <div>
 
-                                    </div>
-                                </li>
---}}
+                                                                    </div>
+                                                                </li>
+                                --}}
 
                             </ul>
                         </div>
@@ -576,150 +578,153 @@
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
 
                     <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider02.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
-
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>شلوار جین مردانه</span>
+                        @foreach($products as $product)
+                            @if($product->has_discount)
+                              <a href="{{route('client.products.show',$product)}}">
+                                <li class="offer-slider-main-item">
+                                    <div class="uk-panel ">
+                                        <div class="offer-slider-main-image-section">
+                                            <img src="{{str_replace('public','/storage',$product->image)}}">
+                                            <span>فولیکا</span>
+                                            <span>{{$product->discount->value}}%</span>
                                         </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
+                                        <div class="offer-slider-main-description-section">
+                                            <div class="offer-slider-main-description-detail">
+                                                <span>{{$product->name}}</span>
+                                            </div>
+
+                                            <div class="offer-slider-main-description-price">
+                                                <del>{{$product->cost}}</del>
+                                                <span>{{$product->cost_with_discount}}</span>
+                                                <span>تومان</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        </a>
+                                </li>
+                            </a>
+                            @endif
+                        @endforeach
 
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
+                        {{--                        <a href="single-product.html">
+                                                    <li class="offer-slider-main-item">
+                                                        <div class="uk-panel ">
+                                                            <div class="offer-slider-main-image-section">
+                                                                <img src="/Client/assets/image/offer-slider.jpg">
+                                                                <span>فولیکا</span>
+                                                                <span>22%</span>
+                                                            </div>
 
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>تی‌شرت زنانه</span>
-                                        </div>
+                                                            <div class="offer-slider-main-description-section">
+                                                                <div class="offer-slider-main-description-detail">
+                                                                    <span>تی‌شرت زنانه</span>
+                                                                </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </a>
+                                                                <div class="offer-slider-main-description-price">
+                                                                    <del>585,000</del>
+                                                                    <span>333,000</span>
+                                                                    <span>تومان</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </a>
 
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider02.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
+                                                <a href="single-product.html">
+                                                    <li class="offer-slider-main-item">
+                                                        <div class="uk-panel ">
+                                                            <div class="offer-slider-main-image-section">
+                                                                <img src="/Client/assets/image/offer-slider02.jpg">
+                                                                <span>فولیکا</span>
+                                                                <span>22%</span>
+                                                            </div>
 
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>شلوار جین مردانه</span>
-                                        </div>
+                                                            <div class="offer-slider-main-description-section">
+                                                                <div class="offer-slider-main-description-detail">
+                                                                    <span>شلوار جین مردانه</span>
+                                                                </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </a>
+                                                                <div class="offer-slider-main-description-price">
+                                                                    <del>585,000</del>
+                                                                    <span>333,000</span>
+                                                                    <span>تومان</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </a>
 
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
+                                                <a href="single-product.html">
+                                                    <li class="offer-slider-main-item">
+                                                        <div class="uk-panel ">
+                                                            <div class="offer-slider-main-image-section">
+                                                                <img src="/Client/assets/image/offer-slider.jpg">
+                                                                <span>فولیکا</span>
+                                                                <span>22%</span>
+                                                            </div>
 
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>تی‌شرت زنانه</span>
-                                        </div>
+                                                            <div class="offer-slider-main-description-section">
+                                                                <div class="offer-slider-main-description-detail">
+                                                                    <span>تی‌شرت زنانه</span>
+                                                                </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </a>
+                                                                <div class="offer-slider-main-description-price">
+                                                                    <del>585,000</del>
+                                                                    <span>333,000</span>
+                                                                    <span>تومان</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </a>
 
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider02.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
+                                                <a href="single-product.html">
+                                                    <li class="offer-slider-main-item">
+                                                        <div class="uk-panel ">
+                                                            <div class="offer-slider-main-image-section">
+                                                                <img src="/Client/assets/image/offer-slider02.jpg">
+                                                                <span>فولیکا</span>
+                                                                <span>22%</span>
+                                                            </div>
 
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>شلوار جین مردانه</span>
-                                        </div>
+                                                            <div class="offer-slider-main-description-section">
+                                                                <div class="offer-slider-main-description-detail">
+                                                                    <span>شلوار جین مردانه</span>
+                                                                </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </a>
+                                                                <div class="offer-slider-main-description-price">
+                                                                    <del>585,000</del>
+                                                                    <span>333,000</span>
+                                                                    <span>تومان</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </a>
 
-                        <a href="single-product.html">
-                            <li class="offer-slider-main-item">
-                                <div class="uk-panel ">
-                                    <div class="offer-slider-main-image-section">
-                                        <img src="/Client/assets/image/offer-slider.jpg">
-                                        <span>فولیکا</span>
-                                        <span>22%</span>
-                                    </div>
+                                                <a href="single-product.html">
+                                                    <li class="offer-slider-main-item">
+                                                        <div class="uk-panel ">
+                                                            <div class="offer-slider-main-image-section">
+                                                                <img src="/Client/assets/image/offer-slider.jpg">
+                                                                <span>فولیکا</span>
+                                                                <span>22%</span>
+                                                            </div>
 
-                                    <div class="offer-slider-main-description-section">
-                                        <div class="offer-slider-main-description-detail">
-                                            <span>تی‌شرت زنانه</span>
-                                        </div>
+                                                            <div class="offer-slider-main-description-section">
+                                                                <div class="offer-slider-main-description-detail">
+                                                                    <span>تی‌شرت زنانه</span>
+                                                                </div>
 
-                                        <div class="offer-slider-main-description-price">
-                                            <del>585,000</del>
-                                            <span>333,000</span>
-                                            <span>تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </a>
-
+                                                                <div class="offer-slider-main-description-price">
+                                                                    <del>585,000</del>
+                                                                    <span>333,000</span>
+                                                                    <span>تومان</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </a>--}}
                     </ul>
 
                     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
