@@ -1,0 +1,592 @@
+.cart-address-header {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cart-address-header img {
+    width: 15%;
+}
+
+.cart-level-container {
+    margin-top: 40px;
+}
+
+.add-adress {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+    display: none;
+}
+
+.add-adress h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.btn-add-address {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 4rem;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn-add-address:hover {
+    color: #fff;
+    background-color: black;
+}
+
+.cart-addres-policy {
+    display: flex;
+    width: 50%;
+    margin: 2rem auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.copy-right {
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: .6rem;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.submit-address {
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.submit-address-container {
+    width: 80%;
+    background-color: #fff;
+    position: relative;
+    padding: 2rem 5rem;
+}
+
+.show-submit-address {
+    display: flex;
+}
+
+.close-submit-address {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.submit-address-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.national-Code {
+    width: fit-content;
+}
+
+.national-Code-container {
+    position: relative;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: .5rem;
+    margin-top: 70px;
+}
+
+.national-Code-container label,
+.receiver-name-label,
+.receiver-phone-label,
+.receiver-address-label {
+    position: absolute;
+    bottom: 1px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: gray;
+    transition: 0.4s ease all;
+}
+
+.national-Code-container input,
+.receiver-name-input,
+.receiver-phone-input,
+.receiver-address-input {
+    position: absolute;
+    border: none;
+    outline: none;
+    bottom: 0;
+    width:  100%;
+}
+
+.national-Code-none {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.national-Code-none input{
+    margin-left: 10px;
+}
+
+.national-Code-container input:focus ~ .national-Code-lable,
+.national-Code-container input:not(:focus):valid ~ .national-Code-lable {
+    transition: 0.4s;
+    bottom: 35px;
+    color: #000;
+    font-size: .8rem;
+}
+
+.receiver-info {
+    margin-top: 1rem;
+}
+
+.receiver-info-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.receiver-name {
+    margin-top: 4rem;
+    border-bottom: 1px solid gainsboro;
+    width: 60%;
+    position: relative;
+}
+
+.receiver-name input:focus ~ .receiver-name-label,
+.receiver-name input:not(:focus):valid ~ .receiver-name-label {
+    transition: 0.4s;
+    bottom: 35px;
+    color: #000;
+    font-size: .8rem;
+}
+
+.receiver-phone {
+    margin-top: 4rem;
+    border-bottom: 1px solid gainsboro;
+    width: 60%;
+    position: relative;
+}
+
+.receiver-phone input:focus ~ .receiver-phone-label,
+.receiver-phone input:not(:focus):valid ~ .receiver-phone-label {
+    transition: 0.4s;
+    bottom: 35px;
+    color: #000;
+    font-size: .8rem;
+}
+
+.receiver-address {
+    margin-top: 4rem;
+    border-bottom: 1px solid gainsboro;
+    width: 60%;
+    position: relative;
+}
+
+.receiver-address input:focus ~ .receiver-address-label,
+.receiver-address input:not(:focus):valid ~ .receiver-address-label {
+    transition: 0.4s;
+    bottom: 35px;
+    color: #000;
+    font-size: .8rem;
+}
+
+.receiver-info-btn {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.receiver-info-btn button {
+    font-size: 1.1rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #f04d7d;
+}
+
+.receiver-info-btn a {
+    margin-left: 1rem;
+    cursor: pointer;
+    color: gray;
+}
+
+.view-address {
+    background-color: reenyellow;
+    width: 90%;
+    margin: 4rem auto;
+
+}
+
+.view-address-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.view-address-title h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.view-address-title p {
+    border: 1px solid #000;
+    padding: .8rem 4rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-address-btn {
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+.show-add-address-btn {
+    display: inline-block;
+}
+
+.hide-change-address-btn {
+    display: none;
+}
+
+.view-address-info {
+    margin-top: 1rem;
+}
+
+.view-address-info h1{
+    font-size: 1.2rem;
+ }
+
+.view-address-info-details {
+    width: 100%;
+    height: 100px;
+    margin-top: 1rem;
+}
+
+.view-address-info-box {
+    width: 100%;
+    margin: .6rem 0;
+    border: 1px solid gainsboro;
+    display: flex;
+    align-content: center;
+    padding: 1rem;
+}
+
+.view-address-info-box span {
+    display: flex;
+    align-items: center;
+}
+
+.view-address-info-name {
+    padding-left: .5rem;
+    margin-left: .5rem;
+    border-left: 1px solid gray;
+}
+
+.view-address-info-post {
+    flex: 1;
+}
+
+.view-address-info-phone {
+    margin: 0 1rem;
+   
+}
+
+.view-address-info-btn {
+    display: flex;
+}
+
+.view-address-info-btn span {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
+    border: 1px solid gainsboro;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.view-address-date-detail {
+    width: 100%;
+    
+}
+
+.view-address-date-detail table {
+    width: 100%;
+    border: 1px solid gainsboro;
+    margin-top: 1rem;
+}
+
+.view-address-date-detail table td {
+    width: 20%;
+    border: 1px solid gainsboro;
+    text-align: center;
+    padding: 2rem .5rem;
+    cursor: pointer;
+    font-size: .8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-address-date-detail table td input {
+    margin-left: .5rem;
+}
+
+.view-address-date-detail table tr td:first-of-type {
+    cursor: default;
+    font-weight: 700;
+}
+
+
+.view-address-date-detail table td:hover {
+    border: 1px solid #f04d7d;
+}
+
+.view-address-date-detail table tr td:first-of-type:hover {
+    border-color: gainsboro;
+}
+
+.view-address-footer {
+    margin-top: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.view-address-footer-label {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: .9rem;
+}
+
+.view-address-footer-label input {
+    margin-right: 1rem;
+    margin-left: .2rem;
+}
+
+.view-address-footer-btn {
+    background-color: #f04d7d;
+    color: #fff;
+    font-size: .9rem;
+    padding: .7rem 2rem;
+    cursor: pointer;
+}
+
+.cart-payment-container {
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    height: fit-content;
+}
+
+.cart-payment-detail {
+    width: 45%;
+    padding: 1.5rem 3rem;
+    border: 1px solid gainsboro;
+}
+
+.cart-payment-detail p {
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    text-align: justify;
+    line-height: 2rem;
+}
+
+.cart-payment-final {
+    width: 45%;
+    padding: 1.5rem 3rem;
+    border: 1px solid gainsboro;
+}
+
+.cart-payment-detail-gift,
+.cart-payment-detail-offer {
+    margin: 3rem 0;
+    width: 60%;
+    position: relative;
+    border-bottom: 1px solid gainsboro;
+}
+
+.cart-payment-detail-gift label,
+.cart-payment-detail-offer label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    font-size: 1rem;
+    transition: .3s ease all;
+}
+
+.cart-payment-detail-gift input,
+.cart-payment-detail-offer input {
+    border: none;
+    outline:none;
+    width: 100%;
+}
+
+.cart-payment-detail-gift input:focus ~ .cart-payment-detail-gift-label,
+.cart-payment-detail-gift input:not(:focus):valid ~ .cart-payment-detail-gift-label {
+    bottom: 30px;
+    font-size: .8rem;
+    transition: .3s ease all;
+}
+
+.cart-payment-detail-offer input:focus ~ .cart-payment-detail-offer-label,
+.cart-payment-detail-offer input:not(:focus):valid ~ .cart-payment-detail-offer-label {
+    bottom: 30px;
+    font-size: .8rem;
+    transition: .3s ease all;
+}
+
+.cart-payment-detail-price-info {
+    padding: 1rem 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+.cart-payment-detail-price-info div {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: .5rem;
+    color: #000;
+}
+
+.cart-payment-detail-price-info div:last-of-type {
+    color: #f04d7d;
+}
+.cart-payment-detail-price-info div span:first-of-type {
+    flex: 1;
+    text-align: right;
+}
+
+.cart-payment-detail-price-info div span:last-of-type {
+    margin-right: .5rem;
+}
+
+.cart-payment-detail-price-final {
+    margin-top: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: #000;
+}
+
+.cart-payment-detail-price-final span:first-of-type {
+    flex: 1;
+}
+
+.cart-payment-detail-price-final span:last-of-type {
+    margin-right: .5rem;
+}
+
+.cart-payment-final h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.online-payment {
+    display: flex;
+    align-items: center;
+}
+
+.online-payment span {
+    margin-right: .5rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.online-payment-description,
+.ofline-payment-description {
+    font-size: 14px;
+    width: 100%;
+    padding: .5rem 1.5rem;
+}
+
+.ofline-payment {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.ofline-payment span{ 
+    margin-right: .5rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.digipay {
+    margin: 1rem 2rem;
+    border: 1px solid #41c1c6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: .3rem;
+    background-color: #f3feff;
+    cursor: pointer;
+}
+
+.digipay p {
+    font-size: .8rem;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    color: #000;
+}
+
+.cart-footer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.cart-footer-btn {
+    background-color: #f04d7d;
+    margin-left: 1.6rem;
+    padding: .7rem 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.show-cart-items {
+    width: 85%;
+    margin: 0 auto;
+    
+    border-top: 3px solid gainsboro;
+}
+
+.show-cart-items h1 {
+    margin: 1rem 0;
+}
+
+.cart-item {
+    width: 30%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    border: 1px solid gainsboro;
+    padding: 1rem;
+}
+
+.cart-item-image {
+    width: 50%;
+}
+
+.cart-item-detail {
+    width: 50%;
+    font-size: .8rem;
+}

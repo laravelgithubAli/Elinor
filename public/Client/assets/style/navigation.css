@@ -1,0 +1,494 @@
+.navigation-container {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-width: 934px;
+    max-width: 1600px;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 2rem;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.navigation-user {
+    display: flex;
+    text-align: center;
+    width: 20%;
+}
+
+.navigation-user .btn-cart {
+    position: relative;
+    display: flex;
+    text-align: center;
+}
+
+.btn-cart .cart-quantity {
+    position: absolute;
+    border-radius: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: .625rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 10px;
+    background: #ef5a88;
+    border-radius: 20px;
+    position: absolute;
+    top: -5px;
+    left: 17px;
+    min-width: 14px;
+    height: 14px;
+    padding: 2px 5px 0;
+    color: #fff;
+}
+
+.navigation-user .btn-login-text a{
+    margin-right: 1rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.navigation-user .btn-login-icon {
+    margin-right: 1rem;
+    display: none;
+}
+
+.navigation-main {
+    text-align: center;
+    flex: 1;
+}
+
+.navigation-main .logo {
+    width: 70%;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.navigation-main .logo img {
+    width: 30%;
+}
+
+.navigation-main .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.menu-item {
+    padding: .3rem .5rem;
+    font-size: .9rem;
+    letter-spacing: normal;
+    line-height: 1.25;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* .menu-item::after {
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    left: calc(50% - 5px);
+    top: 25px;
+    transform: rotate(45deg);
+} */
+
+.menu-item:hover {
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    /* color: #fff; */
+}
+
+.menu-item a {
+    color: #000;
+}
+
+.menu .divider {
+    display: block;
+    width: 1px;
+    height: 15px;
+    margin: auto 20px;
+    background-color: rgba(0,0,0,.54);
+}
+
+
+.item-special a{
+    color: #ef5a88;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    padding-top: 15px;
+    display: none;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.sub-menu .sub-menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gainsboro;
+    width: 100%;
+    background-color: #fff;
+}
+
+.sub-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 .3rem;
+    padding: .7rem .5rem;
+}
+
+.sub-menu-item img {
+    width: 25px;
+    height: 25px;
+    margin-left: .5rem;
+}
+
+.menu-item:hover .sub-menu {
+    display: flex;
+    opacity: 1;
+}
+
+.sub-sub-menu {
+    position: absolute;
+    width: 100%;
+    top: 66px;
+    right: 0;
+    left: 0;
+    display: none;
+    border: 1px solid gainsboro;
+    padding: 2rem;
+    border-top: none;
+    height: fit-content;
+    background-color: #fff;
+}
+
+.sub-menu-item:hover .sub-sub-menu {
+    display: flex;
+}
+
+.sub-sub-menu-list,
+.sub-sub-menu-brands {
+    width: 50%;
+    text-align: right;
+    padding: 2rem;
+    padding-right: 5%;
+}
+
+.sub-sub-menu-list{
+    border-left: 1px solid gainsboro;
+}
+
+.sub-sub-menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.sub-sub-menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.sub-sub-menu-item {
+    width: 50%;
+    display: inline-block;
+    padding: .5rem .2rem;
+}
+
+.sub-sub-menu-item a {
+    color: gray;
+}
+
+.sub-sub-menu-item a:hover {
+    color: #000;
+}
+
+.sub-sub-menu-brands-link {
+    font-size: 1rem;
+}
+
+.sub-sub-menu-brands-items {
+    margin-top: 1rem;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sub-sub-menu-brands-items a {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    background-color: aqua;
+    margin: .5rem;
+}
+
+.sub-sub-menu-brands-items a img {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-sub-menu-brands-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 70%;
+    text-align: left;
+    padding-left: .5rem;
+    margin: 1rem;
+}
+
+.sub-menu-item-active {
+    border-bottom: 2px solid aqua;
+}
+
+.navigation-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    padding: 0 .5rem;
+    padding-bottom: 1.5px;
+    width: 20%;
+}
+
+.navigation-search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+.shopping-cart-section {
+    width: 350px;
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    border-radius: 5px;
+    display: none;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.shopping-cart-container,
+.shopping-cart-main {
+    width: 300px;
+    background-color: #fff;
+    z-index: 200;
+    box-shadow: 0 0 20px #929292;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: none;
+}
+
+.shopping-cart-main {
+    display: inline-flex;
+    align-items: center;
+}
+
+.shopping-cart-main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: .8rem;
+}
+
+.shopping-cart-main-header a {
+    color: #41c1c6;
+}
+
+.shopping-cart-main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shopping-cart-main-footer a {
+    background-color: #ef5a88;
+    color: #fff;
+    padding: .8rem 1.5rem;
+    font-size: .8rem;
+}
+
+.shopping-cart-totalPrice span,
+.shopping-cart-totalPrice p {
+    font-size: .8rem;
+}
+
+.shopping-cart-main-items {
+    width: 100%;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    margin: 1rem 0;
+}
+
+.shopping-cart-main-item {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5rem 0;
+    box-shadow: 0 0 1px gray;
+    padding: .2rem;
+}
+
+.shopping-cart-main-item-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart-section .shopping-cart-main-item-image img {
+    width: 60%;
+    margin: 0;
+}
+
+.shopping-cart-main-item-info {
+ width: 70%;
+ height: 100%;
+ font-size: .6rem;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: flex-start;
+ position: relative;
+}
+
+.shopping-cart-main-item-info span {
+    display: block;
+}
+
+.shopping-cart-main-item-info p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.remove-btm-pro {
+    position: absolute;
+    left: 0;
+    color: gray;
+    top: 0;
+    font-size: .8rem;
+}
+
+.shopping-cart-section img {
+    width: 30%;
+    margin: 2rem 0;
+}
+
+.navigation-user .btn-cart {
+    cursor: pointer;
+}
+
+.navigation-user .btn-cart:hover>.shopping-cart-section{
+    display: inline-flex;
+}
+
+.search-section-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    top: -120%;
+    transition: .3s;
+}
+
+.search-section-body {
+    height: 70vh;
+    width: 100%;
+    background-color: #fff;
+    z-index: 110;
+    position: relative;
+    padding-top: 100px;
+}
+
+.search-section-body-item {
+    width: 80%;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 15px;
+}
+
+.show-search-section-wrapper {
+    display: inline-block;
+    top: 0;
+    transition: .3s;
+}
+
+.search-section-body-close {
+    position: absolute;
+    left: 0;
+    top: -25px;
+    cursor: pointer;
+}
+
+.search-section-body-input {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 3px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.search-section-body-input input {
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.search-history-item {
+    padding: .5rem;
+    padding-left: 1rem;
+    width: 24%;
+    margin: .5rem;
+    margin-right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.search-section-body-history {
+    padding: 1rem 0;
+}

@@ -21,6 +21,16 @@ class category extends Model
         return $this->hasMany(category::class,'category_id');
     }
 
+    public function getAllSubCategorychild()
+    {
+        $childrenIds = $this->children()->pluck('id');
+
+        return category::query()
+            ->whereIn('category_id',$childrenIds)
+            ->orWhere('category_id',$this->id)
+            ->get();
+    }
+
     public function products()
     {
         return $this->hasMany(Product::class, 'category_id');
@@ -46,6 +56,11 @@ class category extends Model
         return $this->propertygroups()
             ->where('propertygroup_id',$propertygroup->id)
             ->exists();
+    }
+
+    public function getHasChildrenAttribute()
+    {
+        return $this->children()->count() > 0;
     }
 
 

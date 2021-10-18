@@ -173,7 +173,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="ali">
+            @if(auth()->user()->role_id == 1)
+             <li class="ali">
                 <a href="###" class="side-menu menu-item {{isset($activity6) ? $activity6:''}}">
                     <div class="side-menu__icon"> <i data-feather="edit"></i> </div>
                     <div class="side-menu__title">
@@ -196,7 +197,7 @@
                     </li>
                 </ul>
             </li>
-            <li>
+              <li>
                 <a href="javascript:;" class="side-menu {{isset($activity8) ? $activity8:''}}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
@@ -213,6 +214,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li>
                 <a href="###" class="side-menu {{isset($activity7) ? $activity7:''}}">
                     <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>

@@ -44,7 +44,7 @@ Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.ed
 Route::patch('/users/{user}',[UserController::class, 'update'])->name('users.update');
 
 
-Route::prefix('/adminpanel')->group(function () {
+Route::prefix('/adminpanel')->middleware(['auth','writerMiddleware'])->group(function () {
 
     Route::get('/',[AdminhomeController::class,'index'])->name('admin.home');
 
@@ -66,9 +66,9 @@ Route::prefix('/adminpanel')->group(function () {
     Route::post('/answers/productquestions/{productquestion}',[AnswerController::class , 'store'])->name('answer.productquestion.store');
     Route::resource('answers',AnswerController::class);
 
-    Route::post('stars/products/{product}',[StarController::class,'productStore'])->name('stars.products.store');
-    Route::post('stars/posts/{post}',[StarController::class,'postStore'])->name('stars.posts.store');
-    Route::post('stars/productquestions/{productquestion}',[StarController::class,'productquestionStore'])->name('stars.productquestions.store');
+    Route::post('stars/products/{product}',[StarController::class,'productStore'])->name('stars.products.store')->withoutMiddleware('writerMiddleware');
+    Route::post('stars/posts/{post}',[StarController::class,'postStore'])->name('stars.posts.store')->withoutMiddleware('writerMiddleware');
+    Route::post('stars/productquestions/{productquestion}',[StarController::class,'productquestionStore'])->name('stars.productquestions.store')->withoutMiddleware('writerMiddleware');
 
     Route::resource('sliders',SliderController::class);
 

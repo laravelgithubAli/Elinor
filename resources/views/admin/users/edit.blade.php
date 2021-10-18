@@ -75,6 +75,21 @@
                         </div>
                     </div>
                 </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="role_id" class="font-medium text-base">نقش ها</label>
+                    <select name="role_id" id="role_id" class="form-control">
+                        <option value="" disabled selected>نقش مورد نظر را انتخاب کنید</option>
+                        @foreach($roles as $role)
+                            <option
+                                @if($user->role_id == $role->id)
+                                selected
+                                @endif
+                                value="{{$role->id}}">{{$role->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
             @include('admin.layout.errors')

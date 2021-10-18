@@ -31,7 +31,7 @@
                             <div class="text-gray-600 text-xs mt-0.5">{{$user->role->title}}</div>
                         </div>
                         <div class="flex mt-4 lg:mt-0">
-                            <button class="btn btn-primary py-1 px-2 ml-2">پیام</button>
+                            <button class="btn btn-primary py-1 px-2 ml-2"><a href="{{route('users.edit',$user)}}">ویرایش</a></button>
                         </div>
                     </div>
                 </div>

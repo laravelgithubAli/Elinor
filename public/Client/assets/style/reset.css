@@ -1,0 +1,530 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'),
+         url('../fonts/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'),
+         url('../fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'),
+         url('../fonts/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'),
+         url('../fonts/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Light.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/woff2/IRANSansWeb(FaNum)_Light.woff2') format('woff2'),
+         url('../fonts/woff/IRANSansWeb(FaNum)_Light.woff') format('woff'),
+         url('../fonts/ttf/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/woff2/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'),
+         url('../fonts/woff/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'),
+         url('../fonts/ttf/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/eot/IRANSans(FaNum)_Medium.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
+         url('../fonts/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
+         url('../fonts/woff/IRANSansWeb(FaNum).woff') format('woff'),
+         url('../fonts/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+
+@font-face {
+    font-family: araztrend;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Fatemefaramarzian.ttf'),
+         url('../fonts/Fatemefaramarzian.ttf') format('truetype');
+}
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: #fbfbff;
+    font-family: IRANSans;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+    display: block;
+    font-family: IRANSans;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: IRANSans;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img, object, embed {
+    max-width: 100%;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+ul {
+    list-style: none;
+    font-family: IRANSans;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    transition: all 500ms ease 0s;
+    font-family: IRANSans;
+    text-decoration: none !important;
+}
+
+del {
+    text-decoration: line-through;
+    font-family: IRANSans;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: iransans;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+    font-family: iransans;
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+    font-family: iransans;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    font-family: iransans;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+    font-family: iransans;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    word-wrap: break-word;
+    font-family: iransans;
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+    font-family: iransans;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+    font-family: iransans;
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+.ie6 input {
+    vertical-align: text-bottom;
+}
+
+select, input, textarea {
+    font: 99% sans-serif;
+    font-family: iransans;
+}
+
+table {
+    font-size: inherit;
+    font-family: iransans;
+    font: 100%;
+}
+
+small {
+    font-size: 85%;
+    font-family: iransans;
+}
+
+strong {
+    font-weight: bold;
+    font-family: iransans;
+}
+
+td, td img {
+    vertical-align: top;
+    font-family: iransans;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    font-family: iransans;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+    font-family: iransans;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+pre, code, kbd, samp {
+    font-family: monospace, sans-serif;
+}
+
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+    cursor: pointer;
+}
+
+button, input, select, textarea {
+    margin: 0;
+    font-family: iransans;
+}
+
+button, input[type=button] {
+    width: auto;
+    overflow: visible;
+    font-family: iransans;
+}
+
+.ie7 img {
+    -ms-interpolation-mode: bicubic;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'), url('../../fonts/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'), url('../../fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'), url('../../fonts/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'), url('../../fonts/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'), url('../../fonts/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Light.eot');
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'), url('../../fonts/woff2/IRANSansWeb(FaNum)_Light.woff2') format('woff2'), url('../../fonts/woff/IRANSansWeb(FaNum)_Light.woff') format('woff'), url('../../fonts/ttf/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot');
+    src: url('../../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'), url('../../fonts/woff2/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'), url('../../fonts/woff/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'), url('../../fonts/ttf/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../fonts/eot/IRANSansWeb(FaNum).eot');
+    src: url('../../fonts/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), url('../../fonts/woff2/IRANSansWeb(FaNum).woff2') format('woff2'), url('../../fonts/woff/IRANSansWeb(FaNum).woff') format('woff'), url('../../fonts/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+
+@font-face {
+    font-family: araztrend;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../fonts/Fatemefaramarzian.ttf');url('../../fonts/Fatemefaramarzian.ttf') format('truetype');
+}
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: iransans;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+    display: block;
+    font-family: iransans;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: iransans;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img, object, embed {
+    max-width: 100%;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+ul {
+    list-style: none;
+    font-family: iransans;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    transition: all 500ms ease 0s;
+    font-family: iransans;
+    text-decoration: none !important;
+}
+
+del {
+    text-decoration: line-through;
+    font-family: iransans;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: iransans;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+    font-family: iransans;
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+    font-family: iransans;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    font-family: iransans;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+    font-family: iransans;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    word-wrap: break-word;
+    font-family: iransans;
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+    font-family: iransans;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+    font-family: iransans;
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+.ie6 input {
+    vertical-align: text-bottom;
+}
+
+select, input, textarea {
+    font: 99% sans-serif;
+    font-family: iransans;
+}
+
+table {
+    font-size: inherit;
+    font-family: iransans;
+    font: 100%;
+}
+
+small {
+    font-size: 85%;
+    font-family: iransans;
+}
+
+strong {
+    font-weight: bold;
+    font-family: iransans;
+}
+
+td, td img {
+    vertical-align: top;
+    font-family: iransans;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    font-family: iransans;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+    font-family: iransans;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+pre, code, kbd, samp {
+    font-family: monospace, sans-serif;
+}
+
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+    cursor: pointer;
+}
+
+button, input, select, textarea {
+    margin: 0;
+    font-family: iransans;
+}
+
+button, input[type=button] {
+    width: auto;
+    overflow: visible;
+    font-family: iransans;
+}
+
+.ie7 img {
+    -ms-interpolation-mode: bicubic;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+
+.container {
+    width: 95%;
+    margin: auto;
+}

@@ -1,0 +1,86 @@
+header {
+    text-align: center;
+    box-shadow: 0 2px 7px 2px rgb(0 0 0 / 5%);
+    background-color: #fff;
+    padding: 1rem;
+    
+}
+
+header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 10%;
+}
+
+main {
+    text-align: center;
+    height: 100%;
+    padding-top: 2rem;
+}
+
+main h1 {
+    font-size: 1.5rem;
+}
+
+.login-form-section {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: 1px solid gainsboro;
+    padding: 3rem 2rem;
+}
+
+.login-form-input {
+    background-color: aquamarine;
+    position: relative;
+    border-bottom: 1px solid gainsboro;
+}
+
+.login-form-input label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    color: gray;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.login-form-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.login-form-section button {
+    width: 100%;
+    margin-top: 5rem;
+    padding: .6rem;
+    outline: none;
+    border: none;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    color: #fff;
+}
+
+.login-form-description {
+    margin-top: 2rem;
+    font-size: 12px;
+    text-align: center;
+}
+
+.login-form-input input:focus ~ .login-form-input-label ,
+.login-form-input input:not(:focus):valid ~ .login-form-input-label{
+    top: -22px;
+	font-size: 10px;
+    color: black;
+}
+
+.login-form-section button.login-btn-active {
+    background-color: #41c1c6;
+    color: #fff;
+}

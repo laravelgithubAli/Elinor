@@ -24,7 +24,6 @@
                         <table class="table table-report sm:mt-2">
                             <thead>
                             <tr>
-                                <th class="whitespace-nowrap">#</th>
                                 <th class="whitespace-nowrap">تصویر</th>
                                 <th class="whitespace-nowrap">نام محصول</th>
                                 <th class="whitespace-nowrap">امتیاز</th>
@@ -40,7 +39,6 @@
                             <tbody>
                             @foreach($products as $product)
                                 <tr class="intro-x">
-                                    <td>{{$product->id}}</td>
                                     <td class="w-40 text-center">
                                         <div class="flex">
                                             <?php
@@ -152,7 +150,6 @@
                                             </svg>
                                         </a>
                                     </td>
-
                                     <td class="table-report__action w-40">
                                         <div class="flex justify-center items-center">
                                             <a class="flex items-center ml-3"

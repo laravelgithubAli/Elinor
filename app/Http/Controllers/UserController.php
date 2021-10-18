@@ -93,7 +93,9 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('admin.users.edit',[
-            'user' => $user
+            'user' => $user,
+            'users' => User::all(),
+            'roles' => Role::all()
         ]);
     }
 
@@ -120,7 +122,8 @@ class UserController extends Controller
             'email' => $request->get('email',$user->email),
             'number' => $request->get('number',$user->number),
             'password' => bcrypt($request->get('password')),
-            'role_id' => Role::findByTitle('user')->id,
+//            'role_id' => Role::findByTitle('user')->id,
+            'role_id' =>$request->get('role_id'),
             'image' => $path,
             'job' => $request->get('job')
         ]);
