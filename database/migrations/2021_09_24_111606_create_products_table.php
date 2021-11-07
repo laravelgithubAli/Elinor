@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('body');
             $table->bigInteger('inventory')->nullable();
+            $table->integer('specialOffer');
             $table->timestamps();
         });
     }

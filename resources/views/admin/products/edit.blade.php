@@ -54,7 +54,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="description" class="font-medium text-base">توضیحات</label>
+                    <label for="description" class="font-medium text-base">توضیح کوتاه</label>
                     <textarea name="description" id="description"
                               class="form-control">{{$product->description}}</textarea>
                 </div>
@@ -62,7 +62,7 @@
                 <div id="vertical-form">
                     <div class="preview">
                         <div class="form-group">
-                            <label for="body" class="font-medium text-base"> متن پست </label>
+                            <label for="body" class="font-medium text-base">توضیح کامل</label>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card">

@@ -100,7 +100,7 @@ class CategoryController extends Controller
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->storeAs(
-                'public/products', $request->file('image')->getClientOriginalName()
+                'public/categories', $request->file('image')->getClientOriginalName()
             );
         }
 

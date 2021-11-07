@@ -59,6 +59,7 @@ class ProductController extends Controller
             'description' => $request->get('description'),
             'body' => $request->get('body'),
             'inventory' => $request->get('inventory'),
+            'specialOffer'=>0
         ]);
 
         return redirect(route('products.index'));
@@ -110,13 +111,21 @@ class ProductController extends Controller
         $product->update([
             'category_id' => $request->get('category_id', $product->category_id),
             'name' => $request->get('name', $product->name),
-            'cost' => $request->get('cost', $product->cost),
+            'cost' => $request->get('cost', $product->price),
             'image' => $path,
             'description' => $request->get('description', $product->description),
             'body' => $request->get('body', $product->body),
             'inventory' => $request->get('inventory', $product->inventory),
         ]);
 
+        return redirect(route('products.index'));
+    }
+
+    public function specialOffer(Request $request, Product $product)
+    {
+        $product->update([
+            'specialOffer'=>$request->get('specialOffer',0)
+        ]);
         return redirect(route('products.index'));
     }
 

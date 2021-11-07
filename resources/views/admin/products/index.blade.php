@@ -9,6 +9,71 @@
 
 @section('content')
 
+    <style>
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 45px;
+            height: 23px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 15px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
     <div
         class="grid grid-cols-12 gap-6 xl:-mt-5 xxl:-mt-8 -mb-10 z-40 xxl:z-10">
         <div class="col-span-12 xxl:col-span-9">
@@ -30,6 +95,7 @@
                                 <th class="whitespace-nowrap">دسته بندی</th>
                                 <th class="whitespace-nowrap">قیمت</th>
                                 <th class="whitespace-nowrap">موجودی</th>
+                                <th class="whitespace-nowrap">پیشنهاد ویژه</th>
                                 <th class="whitespace-nowrap">گالری</th>
                                 <th class="whitespace-nowrap">تخفیف</th>
                                 <th class="whitespace-nowrap"> مشخصات</th>
@@ -93,6 +159,31 @@
                                     <td class="w-40 text-center">{{$product->category->title}}</td>
                                     <td class="w-40 text-center">{{$product->cost}}</td>
                                     <td class="w-40 text-center">{{$product->inventory}}</td>
+
+
+                                    <td class="w-40 text-center">
+                                        <form action="{{route('product.specialOffer',$product)}}" method="post"
+                                              class="form-control">
+                                        @csrf
+                                        @method('PATCH')
+                                        <!-- Toggle A -->
+                                            <div class="flex items-center justify-center w-full mb-12">
+                                                <!-- Rounded switch -->
+                                                <label class="switch" title="افزودن به پیشنهاد های ویژه">
+                                                    <input type="checkbox" name="specialOffer"
+                                                           @if($product->specialOffer == 1)
+                                                               checked
+                                                           @endif
+                                                           value="1">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                            <input type="submit" class="btn btn-sm btn-primary mt-2" value="ثبت"
+                                                   title="افزودن به پیشنهاد های ویژه">
+                                        </form>
+                                    </td>
+
+
                                     <td class="w-40 text-center">
                                         <a href="{{route('products.pictures.index',$product)}}"
                                            class="btn btn-sm btn-warning">
@@ -155,16 +246,16 @@
                                             <a class="flex items-center ml-3"
                                                href="{{route('products.edit',$product)}}"> <i
                                                     data-feather="check-square"
-                                                    class="w-4 h-4 ml-1"></i>
-                                                ویرایش</a>
+                                                    class="w-5 h-5 ml-1"></i>
+                                                </a>
 
                                             <form action="{{route('products.destroy',$product)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a href="" class=" flex items-center text-theme-6">
-                                                    <input type="submit" value="حذف"><i
+                                                    <input type="submit"  title="حذف" value=""><i
                                                         data-feather="trash-2"
-                                                        class="w-4 h-4 ml-1"></i>
+                                                        class="w-5 h-5 ml-1"></i>
                                                 </a>
 
                                             </form>

@@ -11,7 +11,12 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
+
+    protected $appends=[
+        'cost_with_discount',
+        'image_path'
+    ];
 
     public function category()
     {
@@ -114,5 +119,21 @@ class Product extends Model
     {
         $star= Star::query()->where('product_id',$this->id)->firstOrFail();
         return $star->value;
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(User::class,'likes')
+            ->withTimestamps();
+    }
+
+    public function getIsLikedAttribute()
+    {
+        return $this->likes()->where('user_id',auth()->id())->exists();
+    }
+
+    public function getImagePathAttribute()
+    {
+        return str_replace('public', '/storage', $this->image);
     }
 }

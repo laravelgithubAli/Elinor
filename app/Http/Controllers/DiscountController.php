@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DiscountRequest;
 use App\Models\Discount;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -36,7 +37,7 @@ class DiscountController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Product $product, Request $request)
+    public function store(Product $product, DiscountRequest $request)
     {
         $product->addDiscount($request);
 

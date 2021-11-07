@@ -23,6 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('job')->nullable();
             $table->string('image')->nullable();
+            $table->string('nationalCode')->nullable();
+            $table->string('address')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('cardNumber')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('Newsletters')->nullable();
             $table->timestamps();
         });
     }

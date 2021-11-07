@@ -46,6 +46,9 @@ class Productquestion extends Model
         if ($product){
             return $product->name;
         }
-        return $post->title;
+
+        if ($post){
+            return $post->title;
+        }
     }
 }

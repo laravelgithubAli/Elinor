@@ -1,12 +1,15 @@
 @extends('admin.layout.master')
 
+@section('topfield')
+    <div class="-intro-x breadcrumb ml-auto hidden sm:flex"> <a href="">محصولات</a> <i data-feather="chevron-left" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">گالری</a> </div>
+@endsection
+
 
 
 @section('content')
 
-    <div class="content">
         <div class="pos intro-y grid grid-cols-12 gap-5 mt-5">
-            <div class="intro-y col-span-12 lg:col-span-8">
+            <div class="intro-y col-span-12 lg:col-span-12">
 
                 <form action="{{route('products.pictures.store',$product)}}" method="post"
                       enctype="multipart/form-data">
@@ -28,7 +31,9 @@
                                 <div class="flex-none pos-image relative block">
                                     <div class="pos-image__preview image-fit">
                                         <img alt="Rubick Tailwind HTML Admin Template"
-                                             src="{{url('/storage/app/'.$picture->path)}}">
+                                             {{--src="{{url('/storage/app/'.$picture->path)}}"--}}
+                                           src="{{str_replace('public','/storage', $picture->path)}}"
+                                        >
                                     </div>
                                 </div>
                                 <form
@@ -47,7 +52,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
 
 @endsection

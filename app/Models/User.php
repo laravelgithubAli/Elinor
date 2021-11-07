@@ -26,6 +26,12 @@ class User extends Authenticatable
         'role_id',
         'job',
         'image',
+        'nationalCode',
+        'address',
+        'gender',
+        'cardNumber',
+        'birthday',
+        'Newsletters',
     ];
 
     /**
@@ -55,6 +61,16 @@ class User extends Authenticatable
     public function getHasStarAttribute($product)
     {
         return Star::query()->where('user_id',$this->id)->where('product_id',$product->id)->exists();
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Product::class,'likes')->withTimestamps();
+    }
+
+    public function like(Product $product)
+    {
+        $this->likes()->sync($product);
     }
 
 }

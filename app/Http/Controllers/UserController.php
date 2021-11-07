@@ -32,7 +32,7 @@ class UserController extends Controller
 
        auth()->login($User);
 
-       return redirect(route('admin.home'));
+       return redirect(route('home'));
 
     }
 
@@ -63,7 +63,12 @@ class UserController extends Controller
             'password' => bcrypt($request->get('password')),
             'role_id' => Role::findByTitle('user')->id,
             'image' => null,
-            'job' => null
+            'job' => null,
+            'nationalCode' => null,
+            'address' => null,
+            'gender' => null,
+            'cardNumber' => null,
+            'birthday' => null,
         ]);
 
         auth()->login($User);
@@ -99,6 +104,7 @@ class UserController extends Controller
         ]);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -125,7 +131,13 @@ class UserController extends Controller
 //            'role_id' => Role::findByTitle('user')->id,
             'role_id' =>$request->get('role_id'),
             'image' => $path,
-            'job' => $request->get('job')
+            'job' => $request->get('job',null),
+            'nationalCode' => $request->get('nationalCode',null),
+            'address' => $request->get('address',null),
+            'gender' => $request->get('gender',null),
+            'cardNumber' => $request->get('cardNumber',null),
+            'birthday' => $request->get('birthday',null),
+            'Newsletters' => $request->get('Newsletters',null),
         ]);
 
         return redirect(route('admin.home'));
