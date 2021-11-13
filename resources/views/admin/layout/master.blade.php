@@ -238,10 +238,48 @@
                     </li>
                 </ul>
             </li>
+
+            <li>
+                <a href="###" class="side-menu {{isset($activity22) ? $activity22:''}}">
+                    <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>
+                    <div class="side-menu__title">
+                        فوتر
+                        <div class="side-menu__sub-icon "> <i data-feather="chevron-down"></i> </div>
+                    </div>
+                </a>
+                <ul class="{{isset($submenu22) ? $submenu22:''}}">
+                    <li>
+                        <a href="{{route('footer.links.edit')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> مدیریت لینک ها </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('footertext.index')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> مدیرت متن فوتر </div>
+                        </a>
+                    </li>
+                      <li>
+                        <a href="{{route('footer.description.index')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> مدیرت عکس و توضیحات فوتر </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li>
                 <a href="{{route('sliders.index')}}" class="side-menu {{isset($activity12) ? $activity12:''}}">
                     <div class="side-menu__icon"> <i data-feather="calendar"></i></div>
                     <div class="side-menu__title"> اسلایدر </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{route('massageMail.index')}}" class="side-menu {{isset($activity12) ? $activity12:''}}">
+                    <div class="side-menu__icon"> <i data-feather="calendar"></i></div>
+                    <div class="side-menu__title"> ارسال خبرنامه </div>
                 </a>
             </li>
         </ul>

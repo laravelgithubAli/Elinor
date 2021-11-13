@@ -69,19 +69,6 @@
                                 @endforeach
                             @endif
 
-                            {{--                            <div class="shopping-cart-main-item">
-                                                            <div class="shopping-cart-main-item-image">
-                                                                <img src="/Client/assets/image/offer-slider02.jpg">
-                                                            </div>
-
-                                                            <div class="shopping-cart-main-item-info">
-                                                                <span>تی‌شرت زنانه</span>
-                                                                <span>سفید</span>
-                                                                <p>65000 تومان</p>
-                                                                <span class="material-icons remove-btm-pro">close</span>
-                                                            </div>
-
-                                                        </div>--}}
                         </div>
 
                         <div class="shopping-cart-main-footer">
@@ -138,7 +125,7 @@
             <ul class="menu">
                 @foreach($categories as $category)
                     <li class="menu-item">
-                        <a href="#">{{$category->title}}</a>
+                        <a href="{{route('client.catPro.show',$category)}}">{{$category->title}}</a>
 
                         <div class="sub-menu">
                             <ul class="sub-menu-list">
@@ -151,44 +138,19 @@
                                         <div class="sub-sub-menu">
                                             <div class="sub-sub-menu-list">
                                                 <div class="sub-sub-menu-link">
-                                                    <a href="#">خرید{{$subcategory->title}}</a>
+                                                    <a href="{{route('client.catPro.show',$subcategory)}}">خرید{{$subcategory->title}}</a>
                                                     <span class="material-icons">chevron_left</span>
                                                 </div>
 
                                                 <ul class="sub-sub-menu-items">
                                                     @foreach($subcategory->products as $product)
                                                         <li class="sub-sub-menu-item">
-                                                            <a href="#">{{$product->name}}</a>
+                                                            <a href="{{route('client.products.show',$product)}}">{{$product->name}}</a>
                                                         </li>
                                                     @endforeach
-                                                    <li class="sub-sub-menu-item">
+{{--                                                    <li class="sub-sub-menu-item">
                                                         <a href="#">تی‌شرت زنانه</a>
-                                                    </li>
-                                                    {{--                                                    <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>
-                                                                                                        <li class="sub-sub-menu-item">
-                                                                                                            <a href="#">تی‌شرت زنانه</a>
-                                                                                                        </li>--}}
+                                                    </li>--}}
                                                 </ul>
                                             </div>
                                             {{--Start:Brand--}}
@@ -231,47 +193,8 @@
                 <div class="divider"></div>
 
                 <li class="menu-item item-special">
-                    <a href="#">فروش ویژه</a>
+                    <a href="{{route('see.all')}}">فروش ویژه</a>
                 </li>
-
-                {{--                <li class="menu-item">
-                                    <a href="#">برندها</a>
-
-                                    <div class="sub-menu">
-                                        <ul class="sub-menu-list">
-                                            <li class="sub-menu-item">
-                                                <img src="{{url("")}}/Client/assets/image/shirt.png">
-                                                <span>لباس</span>
-
-                                                <div>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="sub-menu-item">
-                                                <img src="{{url("")}}/Client/assets/image/shoes.png">
-                                                <span>کفش</span>
-
-                                                <div>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="sub-menu-item">
-                                                <img src="{{url("")}}/Client/assets/image/accessory.png">
-                                                <span>اکسسوری</span>
-
-                                                <div>
-
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="menu-item">
-                                    <a href="#">خانه طراحان ایرانی</a>
-                                </li>--}}
             </ul>
         </div>
 
@@ -322,7 +245,7 @@
                     خرید
                     <ul class="footer-category-sub-items">
                         @foreach($footerCategories as $category)
-                            <a href="#" class="footer-category-sub-item">
+                            <a href="{{route('client.catPro.show',$category)}}" class="footer-category-sub-item">
                                 <li>{{$category->title}}</li>
                             </a>
                         @endforeach
@@ -339,34 +262,19 @@
                 </li>
 
                 <li class="footer-category-item">
-                    خدمات مشتریان
+
                     <ul class="footer-category-sub-items">
                         <a href="#" class="footer-category-sub-item">
-                            <li>پاسخ به پرسش‌های متداول</li>
-                        </a>
-                        <a href="#" class="footer-category-sub-item">
-                            <li>رویه‌های بازگردانی کالا</li>
-                        </a>
-                        <a href="#" class="footer-category-sub-item">
-                            <li>شرایط استفاده</li>
-                        </a>
-                        <a href="#" class="footer-category-sub-item">
-                            <li>حریم خصوصی</li>
+                            <li>{{$footertext2->title}}</li>
                         </a>
                     </ul>
                 </li>
 
                 <li class="footer-category-item">
-                    اطلاعات دیجی‌استایل
+
                     <ul class="footer-category-sub-items">
                         <a href="#" class="footer-category-sub-item">
-                            <li>درباره دیجی‌استایل</li>
-                        </a>
-                        <a href="#" class="footer-category-sub-item">
-                            <li>تماس با دیجی‌استایل</li>
-                        </a>
-                        <a href="#" class="footer-category-sub-item">
-                            <li>همکاری با دیجی‌استایل</li>
+                            <li>{{$footertext1->title}}</li>
                         </a>
                     </ul>
                 </li>
@@ -375,22 +283,23 @@
 
         <div class="footer-category-left">
             <div class="footer-category-left-section1">
-                <span>تلفن پشتیبانی : 123456789</span>
+                <span>تلفن پشتیبانی : {{$footer->SupportPhone}}</span>
                 <a title="بازگشت به بالا" href="#header" class="btn-go-up">
                     <span class="material-icons">expand_less</span>
                 </a>
             </div>
 
             <div class="footer-category-left-section2">
-                <a href="#"><img src="{{url("")}}/Client/assets/image/instagram.png"></a>
-                <a href="#"><img src="{{url("")}}/Client/assets/image/whatsapp.png"></a>
-                <a href="#"><img src="{{url("")}}/Client/assets/image/telegram.png"></a>
+                <a href="{{$footer->instagram}}"><img src="{{url("")}}/Client/assets/image/instagram.png"></a>
+                <a href="{{$footer->whatsapp}}"><img src="{{url("")}}/Client/assets/image/whatsapp.png"></a>
+                <a href="{{$footer->telegram}}"><img src="{{url("")}}/Client/assets/image/telegram.png"></a>
             </div>
 
             <div class="footer-category-left-section3">
                 <span>ثبت نام در خبرنامه</span>
-                <form>
-                    <input type="email">
+                <form action="{{route('newsletter.store')}}" method="post">
+                    @csrf
+                    <input type="email" name="email">
                     <button><span class="material-icons">west</span></button>
                 </form>
             </div>
@@ -399,32 +308,32 @@
 
     <div class="footer-description">
         <div class="footer-description-right">
-            <span class="title">فروشگاه اینترنتی مد ولباس</span>
+            <span class="title">{{$footerdescription->title}}{{--فروشگاه اینترنتی مد ولباس--}}</span>
 
             <div class="footer-description-text">
-                <p>
-                    دیجی‌استایل، پس از تجربه‌ی موفق فروشگاه اینترنتی دیجی‌کالا به صورت تخصصی پا به عرصه مد، پوشاک و سبک
+                <p>{{$footerdescription->body1}}
+{{--                    دیجی‌استایل، پس از تجربه‌ی موفق فروشگاه اینترنتی دیجی‌کالا به صورت تخصصی پا به عرصه مد، پوشاک و سبک
                     زندگی گذاشت تا همان تجربه‌ی شیرین، در قالبی نو تکرار شود. در دیجی ‌استایل می‌توانید همه آنچه مرتبط
                     با مد و پوشاک از انواع لباس زنانه، لباس مردانه و لباس بچگانه گرفته تا کیف و کفش و اکسسوری را با
-                    تخفیف ویژه در حراج ها، پیدا کنید و به سادگی یک ست کامل از جدیدترین‌ برندهای معتبر را بخرید.
+                    تخفیف ویژه در حراج ها، پیدا کنید و به سادگی یک ست کامل از جدیدترین‌ برندهای معتبر را بخرید.--}}
                 </p>
 
-                <p class="more-secription">
-                    در دیجی استایل برندهای ایرانی مشهوری نظیر چرم مشهد، درسا، کفش ملی، کفش شیما، شیفر، چرم کروکو، مارال
+                <p class="more-secription">{{$footerdescription->body2}}
+{{--                    در دیجی استایل برندهای ایرانی مشهوری نظیر چرم مشهد، درسا، کفش ملی، کفش شیما، شیفر، چرم کروکو، مارال
                     چرم، بادی اسپینر، ال سی من، پاتن جامه، تن درست، زیبو، زی، کیکی رایکی، نیکتا و ... برندهای خارجی نظیر
                     دیور (Dior)، آلدو (Aldo)، آندر آرمور (Under Armour)، نایکی (Nike)، اسکچرز (Skechers)، ریباک
                     (Reebok)، سالامون (Salomon)، ری بن (Rey Ban)، ال سی وایکیکی (LC Waikiki)، پوما (Puma)، دنیلی
                     (Daniellee) و... موجود است و می توانید جدیدترین محصولات این برندها رو به صورت آنلاین تهیه کنید و به
-                    راحتی درب منزل تحویل بگیرید.
+                    راحتی درب منزل تحویل بگیرید.--}}
                 </p>
 
-                <p class="more-secription">
-                    همچنان دیجی استایل با ورود به دنیای زیبایی و سلامت انواع عطر و ادکلن، لوازم آرایش چشم و ابرو، آرایش
+                <p class="more-secription">{{$footerdescription->body3}}
+{{--                    همچنان دیجی استایل با ورود به دنیای زیبایی و سلامت انواع عطر و ادکلن، لوازم آرایش چشم و ابرو، آرایش
                     صورت، لوازم شخصی برقی، بهداشت و زیبایی ناخن، ابزار سلامت و ... را در اختیار مشتریان قرار داده تا
                     بتوانند از محصولات اورجینال و اصل خریداری کنند و در صورت مغایرت کالا تا 14 روز امکان بازگشت کالا را
                     وجود دارد. پس همین حالا برای خرید انواع رنگ مو، سشوار، پنکیک، ماسک صورت، خط چشم، لاک ناخن، ادکلن،
                     کانسیلر، شامپو، سایه ابرو و سایه چشم به فروشگاه اینترنتی دیجی استایل مراجعه کنید و تنها با چند کلیک
-                    محصول مورد نظر خود را سفارش دهید.
+                    محصول مورد نظر خود را سفارش دهید.--}}
                 </p>
             </div>
 
@@ -436,12 +345,13 @@
         </div>
 
         <div class="footer-description-left">
-            <img src="{{url("")}}/Client/assets/image/shaparak.png">
+            <img src="{{url('/storage/app/'.$footerdescription->image)}}">
         </div>
     </div>
 
     <div class="footer-copy-right">
-        <span>کلیه حقوق این سایت متعلق به شرکت ....... است</span>
+        <span>{{$footerdescription->description}}</span>
+{{--        <span>کلیه حقوق این سایت متعلق به شرکت ....... است</span>--}}
     </div>
 </footer>
 
@@ -525,6 +435,17 @@
             $('.more-secription').toggleClass('show-more-secription');
             $('.btn-title-open').toggleClass('hide-btn-title-open');
             $('.btn-title-close').toggleClass('show-btn-title-close');
+        });
+
+
+        $('.add-comment-btn').click(function (e) {
+            $('.user-modal-comment').addClass('show-user-modal-comment');
+
+
+        });
+
+        $('.close-user-comment').click(function() {
+            $('.user-modal-comment').removeClass('show-user-modal-comment');
         });
 
         $('.navigation-search').click(function () {

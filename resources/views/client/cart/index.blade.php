@@ -20,11 +20,6 @@
                 </div>
             </a>
 
-            <h1>نتایج جستجو</h1>
-            <p>'{{$porro->count()}}' result for  "{{request()->input('query')}}"</p>
-
-
-
             <a class="cart-level-two">
                 <div class="cart-level-image">
                     <img src="/Client/assets/image/cart-l2.svg">

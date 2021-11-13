@@ -52,7 +52,7 @@
             <div class="offer-slider-container">
                 <div class="offer-slider-text">
                     <img src="{{url("")}}/Client/assets/image/offer.svg">
-                    <a href="$\#">مشاهده همه</a>
+                    <a href="{{route('see.all')}}">مشاهده همه</a>
                 </div>
 
                 <div class="offer-slider-main">
@@ -66,7 +66,7 @@
                                             <div class="uk-panel ">
                                                 <div class="offer-slider-main-image-section">
                                                     <img src="{{str_replace('public','/storage',$product->image)}}">
-{{--                                                    <span>فولیکا</span>--}}
+                                                    {{--                                                    <span>فولیکا</span>--}}
                                                     @if($product->has_discount)
 
                                                         <span>{{$product->discount->value}}%</span>
@@ -95,102 +95,6 @@
                                     </a>
                                 @endif
                             @endforeach
-                            <a href="single-product.html">
-                                <li class="offer-slider-main-item">
-                                    <div class="uk-panel ">
-                                        <div class="offer-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="offer-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>تی‌شرت زنانه</span>
-                                            </div>
-
-                                            <div class="offer-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
-
-                            <a href="single-product.html">
-                                <li class="offer-slider-main-item">
-                                    <div class="uk-panel ">
-                                        <div class="offer-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="offer-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="offer-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
-
-                            <a href="single-product.html">
-                                <li class="offer-slider-main-item">
-                                    <div class="uk-panel ">
-                                        <div class="offer-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="offer-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>تی‌شرت زنانه</span>
-                                            </div>
-
-                                            <div class="offer-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
-
-                            <a href="single-product.html">
-                                <li class="offer-slider-main-item">
-                                    <div class="uk-panel ">
-                                        <div class="offer-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="offer-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="offer-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
-
                             <a href="single-product.html">
                                 <li class="offer-slider-main-item">
                                     <div class="uk-panel ">
@@ -247,10 +151,10 @@
 
                         <div class="section-two">
                             @foreach($threeMan as $threeman)
-                                <div class="section-two-1">
+                                <a href="{{route('client.catPro.show',$threeman)}}" class="section-two-1">
                                     <img src="{{url("")}}{{str_replace('public','/storage',$threeman->image)}}">
                                     <span>{{$threeman->title}}</span>
-                                </div>
+                                </a>
                             @endforeach
                             {{--                        <div class="section-two-2">
                                                         <img src="{{url("")}}/Client/assets/image/section-one-man-accesory.jpg">
@@ -272,10 +176,10 @@
 
                         <div class="section-two">
                             @foreach($threeWoman as $threewoman)
-                                <div class="section-two-1">
+                                <a href="{{route('client.catPro.show',$threewoman)}}" class="section-two-1">
                                     <img src="{{url("")}}{{str_replace('public','/storage',$threewoman->image)}}">
                                     <span>{{$threewoman->title}}</span>
-                                </div>
+                                </a>
                             @endforeach
 
                             {{--                        <div class="section-two-2">
@@ -298,7 +202,7 @@
 
                         <div class="section-two">
                             @foreach($Children as $children)
-                                <a class="section-two-1">
+                                <a href="{{route('client.catPro.show',$children)}}" class="section-two-1">
                                     <img src="{{url("")}}{{str_replace('public','/storage',$children->image)}}">
                                     <span>{{$children->title}}</span>
                                 </a>
@@ -319,7 +223,7 @@
 
                         <div class="section-two">
                             @foreach($healthBeauty as $HealthBeauty)
-                                <a class="section-two-1">
+                                <a href="{{route('client.catPro.show',$HealthBeauty)}}" class="section-two-1">
                                     <img src="{{url("")}}{{str_replace('public','/storage',$HealthBeauty->image)}}">
                                     <span>{{$HealthBeauty->title}}</span>
                                 </a>
@@ -351,7 +255,7 @@
                     <span class="cp-carousel__title-text">
                         پربــازدیـد تریـن‌های اخــیــــــــر
                     </span>
-                    <a href="$\#">مشاهده همه</a>
+                    <a href="{{route('see.all.most')}}">مشاهده همه</a>
                 </div>
 
                 <div class="more-see-slider-main">
@@ -365,7 +269,7 @@
                                             <div class="more-see-slider-main-image-section">
                                                 <img
                                                     src="{{url("")}}{{str_replace('public','/storage',$product->image)}}">
-                                                <span>فولیکا</span>
+{{--                                                <span>فولیکا</span>--}}
                                                 @if($product->has_discount)
                                                     <span>{{$product->discount->value}}%</span>
                                                 @endif
@@ -418,130 +322,6 @@
                                 </a>
                             </li>
 
-
-                            <li class="more-see-slider-main-item">
-                                <a href="#">
-                                    <div class="uk-panel ">
-                                        <div class="more-see-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="more-see-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="more-see-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="more-see-slider-main-item">
-                                <a href="#">
-                                    <div class="uk-panel ">
-                                        <div class="more-see-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="more-see-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="more-see-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="more-see-slider-main-item">
-                                <a href="#">
-                                    <div class="uk-panel ">
-                                        <div class="more-see-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="more-see-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="more-see-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="more-see-slider-main-item">
-                                <a href="#">
-                                    <div class="uk-panel ">
-                                        <div class="more-see-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="more-see-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="more-see-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="more-see-slider-main-item">
-                                <a href="#">
-                                    <div class="uk-panel ">
-                                        <div class="more-see-slider-main-image-section">
-                                            <img src="{{url("")}}/Client/assets/image/offer-slider02.jpg">
-                                            <span>فولیکا</span>
-                                            <span>22%</span>
-                                        </div>
-
-                                        <div class="more-see-slider-main-description-section">
-                                            <div class="offer-slider-main-description-detail">
-                                                <span>شلوار جین مردانه</span>
-                                            </div>
-
-                                            <div class="more-see-slider-main-description-price">
-                                                <del>585,000</del>
-                                                <span>333,000</span>
-                                                <span>تومان</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
                         </ul>
 
                         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
@@ -564,7 +344,7 @@
             </a>
         </div>
 
-        <div class="more-sel-slider">
+{{--        <div class="more-sel-slider">
             <div class="more-see-slider-container">
                 <div class="more-see-slider-text">
                     <span class="cp-carousel__title-text">
@@ -762,7 +542,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
         <div class="beauty-baner-section">
             <div class="beauty-baner-title">
@@ -797,7 +577,7 @@
                     <span class="cp-carousel__title-text">
                         جــــــدیــد تریـن‌های اخــیــــــــر
                     </span>
-                    <a href="$\#">مشاهده همه</a>
+                    <a href="{{route('see.all.newest')}}">مشاهده همه</a>
                 </div>
 
                 <div class="more-see-slider-main">
@@ -1028,7 +808,7 @@
             </div>
         </div>
 
-        <div class="new-product-slider">
+{{--        <div class="new-product-slider">
             <div class="more-see-slider-container">
                 <div class="more-see-slider-text">
                     <span class="cp-carousel__title-text">
@@ -1226,7 +1006,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
         <div class="bottom-category-wrapper">
             <ul class="bottom-category-items">
@@ -1236,83 +1016,14 @@
                             {{$category->title}}
                             <ul class="bottom-category-sub-items">
                                 @foreach($category->children as $subcategory)
-                                    <a href="#">
+                                    <a href="{{route('client.catPro.show',$subcategory)}}">
                                         <li class="bottom-category-sub-item">{{$subcategory->title}}</li>
                                     </a>
                                 @endforeach
-                                {{--                            <a href="#">
-                                                                <li class="bottom-category-sub-item">کفش مردانه</li>
-                                                            </a>
-                                                            <a href="#">
-                                                                <li class="bottom-category-sub-item">اکسسوری مردانه</li>
-                                                            </a>
-                                                            <a href="#">
-                                                                <li class="bottom-category-sub-item">ورزشی مردانه</li>
-                                                            </a>--}}
                             </ul>
                         </li>
                     </a>
                 @endforeach
-
-                {{--            <a href="#">
-                                <li class="bottom-category-item">
-                                    زنانه
-                                    <ul class="bottom-category-sub-items">
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">لباس زنانه</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">کفش زنانه</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">اکسسوری زنانه</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">ورزشی زنانه</li>
-                                        </a>
-                                    </ul>
-                                </li>
-                            </a>
-
-                            <a href="#">
-                                <li class="bottom-category-item">
-                                    بچه‌گانه
-                                    <ul class="bottom-category-sub-items">
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">نوزاد</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">دخترانه</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">پسرانه</li>
-                                        </a>
-                                    </ul>
-                                </li>
-                            </a>
-
-                            <a href="#">
-                                <li class="bottom-category-item">
-                                    زیبایی و سلامت
-                                    <ul class="bottom-category-sub-items">
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">لوازم آرایشی</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">لوازم بهداشتی</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item">لوازم شخصی برقی</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item"> عطر</li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="bottom-category-sub-item"> ابزار سلامت</li>
-                                        </a>
-                                    </ul>
-                                </li>
-                            </a>--}}
             </ul>
         </div>
 

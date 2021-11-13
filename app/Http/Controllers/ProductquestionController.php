@@ -19,12 +19,12 @@ class ProductquestionController extends Controller
      */
     public function index(Product $product)
     {
-        return view('admin.productquestions.index',[
+        return view('admin.productquestions.index', [
             'product' => $product,
             'productquestions' => Productquestion::all(),
             'posts' => Post::all(),
             'answers' => Answer::all()
-        ])->with(['activity7' => 'side-menu--active','submenu7' => 'side-menu__sub-open']);
+        ])->with(['activity7' => 'side-menu--active', 'submenu7' => 'side-menu__sub-open']);
     }
 
     /**
@@ -34,28 +34,28 @@ class ProductquestionController extends Controller
      */
     public function create()
     {
-        return view('admin.productquestions.create',[
-            'products'=>Product::all(),
+        return view('admin.productquestions.create', [
+            'products' => Product::all(),
             'posts' => Post::all()
-        ])->with(['activity7' => 'side-menu--active','submenu7' => 'side-menu__sub-open']);
+        ])->with(['activity7' => 'side-menu--active', 'submenu7' => 'side-menu__sub-open']);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductquestionRequest $request, Product $product)
     {
         $path = "public/productquestion/placeholder.jpg";
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $path = $request->file('image')->storeAs(
-                'public/productquestion',$request->file('image')->getClientOriginalName());
+                'public/productquestion', $request->file('image')->getClientOriginalName());
         }
 
         Productquestion::query()->create([
-           'title' => $request->get('title'),
+            'title' => $request->get('title'),
             'product_id' => $request->get('product_id'),
             'post_id' => $request->get('post_id'),
             'image' => $path,
@@ -66,10 +66,24 @@ class ProductquestionController extends Controller
         return redirect(route('productquestions.index'));
     }
 
+    public function ClientCommentStore(Request $request, Product $product)
+    {
+        Productquestion::query()->create([
+            'title' => $request->get('title'),
+            'product_id' => $product->id,
+            'post_id' => null,
+            'image' => null,
+            'status' => 0,
+            'user_id' => auth()->id()
+        ]);
+
+        return redirect()->back();
+    }
+
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Productquestion  $productquestion
+     * @param \App\Models\Productquestion $productquestion
      * @return \Illuminate\Http\Response
      */
     public function show(Productquestion $productquestion)
@@ -80,7 +94,7 @@ class ProductquestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Productquestion  $productquestion
+     * @param \App\Models\Productquestion $productquestion
      * @return \Illuminate\Http\Response
      */
     public function edit(Productquestion $productquestion)
@@ -91,8 +105,8 @@ class ProductquestionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Productquestion  $productquestion
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Productquestion $productquestion
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Productquestion $productquestion)
@@ -108,7 +122,7 @@ class ProductquestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Productquestion  $productquestion
+     * @param \App\Models\Productquestion $productquestion
      * @return \Illuminate\Http\Response
      */
     public function destroy(Productquestion $productquestion)

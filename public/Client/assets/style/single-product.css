@@ -339,7 +339,7 @@ main {
 
 .product-user-comment-star {
     width: 50px;
-    color: #fff; 
+    color: #fff;
    background-color: #16d39a;
     display: flex;
     align-items: center;
@@ -441,4 +441,117 @@ main {
 
 footer {
     background-color: #fff;
+}
+
+
+.add-comment-btn {
+    margin: 2rem 0;
+    width: 80%;
+    padding: .8rem;
+    text-align: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.add-comment-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.user-modal-comment {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-user-modal-comment {
+    display: flex;
+
+}
+
+.user-comment-container {
+    width: 30%;
+    height: 500px;
+    background-color: #fff;
+    padding: 1.5rem;
+
+}
+
+.user-comment-container form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.user-comment-header {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-comment-header span {
+    font-weight: 700;
+    color: #000;
+}
+
+.user-comment-header span {
+    font-weight: 700;
+    color: #000;
+}
+
+.user-comment-header .close-user-comment {
+    cursor: pointer;
+}
+
+.user-comment-product-info {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.user-comment-product-info-image {
+    width: 30%;
+}
+
+.user-comment-product-info-title {
+    color: #000;
+}
+
+.user-comment-text {
+    display: block;
+    margin-top: 2rem;
+    position: relative;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.user-comment-text textarea {
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    border: 1px solid gainsboro;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+.user-comment-footer {
+    text-align: left;
+}
+
+.user-comment-footer input {
+    padding: .5rem 2.5rem;
+    background-color: #16d39a;
+    border: none;
+    color: #fff;
 }

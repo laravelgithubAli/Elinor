@@ -84,6 +84,11 @@ class Product extends Model
         return $this->hasMany(Productquestion::class);
     }
 
+    public function hasStatus()
+    {
+        return $this->productquestions()->where('status','!=','0')->get();
+    }
+
     public function hasProductquestion(Product $product)
     {
         return $this->productquestions()->where('product_id',$product->id)->get();

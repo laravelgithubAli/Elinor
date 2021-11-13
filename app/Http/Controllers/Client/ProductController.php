@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\category;
+use App\Models\Footer;
 use App\Models\Product;
+use App\Models\Productquestion;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,6 +18,19 @@ class ProductController extends Controller
             'product' => $product,
             'categories' => category::query()->where('category_id','1')->get(),
             'footerCategories' => category::query()->where('category_id','1')->take(4)->get(),
+            'footer' => Footer::query()->first(),
+            'ww' => Productquestion::query()->where('product_id',$product->id)->orderBy('id','desc')->get(),
+            'footer' => Footer::query()->first()
+        ]);
+    }
+
+    public function catPro(category $category)
+    {
+        return view('client.catPro.show',[
+            'category' => $category,
+            'categories' => category::query()->where('category_id','1')->get(),
+            'footerCategories' => category::query()->where('category_id','1')->take(4)->get(),
+            'footer' => Footer::query()->first(),
         ]);
     }
 
@@ -29,7 +44,8 @@ class ProductController extends Controller
     {
         return view('client.cart.index',[
             'categories' => category::query()->where('category_id','1')->get(),
-            'footerCategories' => category::query()->where('category_id','1')->take(4)->get()
+            'footerCategories' => category::query()->where('category_id','1')->take(4)->get(),
+            'footer' => Footer::query()->first()
         ]);
     }
 
