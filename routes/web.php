@@ -22,6 +22,7 @@ use App\Http\Controllers\ProductquestionController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\PropertygroupController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ShoporderController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\StarController;
 use App\Http\Controllers\UserController;
@@ -70,7 +71,13 @@ Route::get('/category/products/{category}', [ClientProductController::class, 'ca
 Route::get('/cart', [ClientProductController::class, 'cart'])->name('cart');
 Route::get('/add-to-cart/{id}', [ClientProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('/update-cart', [ClientProductController::class, 'update'])->name('update.cart');
-Route::delete('/remove-from-cart', [ClientProductController::class, 'remove'])->name('remove.from.cart');
+Route::post('/remove-from-cart', [ClientProductController::class, 'remove'])->name('remove.from.cart');
+
+Route::get('/information',[ShoporderController::class, 'index'])->name('information');
+Route::post('/information',[ShoporderController::class, 'store'])->name('information.store');
+Route::get('/information/final',[ShoporderController::class, 'show'])->name('information.final');
+
+
 
 Route::post('/products/comments/{product}',[ProductquestionController::class, 'ClientCommentStore'])->name('Client.comment.store');
 
@@ -138,6 +145,11 @@ Route::prefix('/adminpanel')->middleware(['auth', 'writerMiddleware'])->group(fu
 
     Route::get('/footer/description',[FooterdescriptionController::class, 'index'])->name('footer.description.index');
     Route::patch('footer/description/update',[FooterdescriptionController::class, 'update'])->name('footer.description.update');
+
+    Route::get('/information/show',[ShoporderController::class, 'adminShow'])->name('admin.information.show');
+    Route::get('/information/shoporders/{shoporder}',[ShoporderController::class, 'adminShowList'])->name('admin.information.show.list');
+    Route::post('/information/sendMail',[ShoporderController::class, 'sendMail'])->name('admin.information.sendMail');
+
 
 
 });

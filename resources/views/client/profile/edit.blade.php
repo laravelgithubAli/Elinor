@@ -194,7 +194,7 @@
                                                 </div>
                         --}}
 
-                        <input type="submit" class="btn btn-primary btn-sm">
+                        <input type="submit" class="btn btn-primary btn-sm" value="ذخیره">
                     </form>
                 </div>
             </div>

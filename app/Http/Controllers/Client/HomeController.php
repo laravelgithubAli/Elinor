@@ -95,13 +95,12 @@ class HomeController extends Controller
         if ($userexsits->exists()) {
             $user = $userexsits->first();
             Mail::to($user->email)->send(new VerfryEmail($otp));
-            session()->flash('success', "ایمیل بازیابی با موفقیت برای شما ارسال شد");
+            session()->flash('success', "ایمیل بازیابی با موفقیت ارسال شد");
             $user->update([
                 'password' => bcrypt($otp)
             ]);
         } else {
-//            session()->flash('error', "شما هنوز ثبت نام نکرده اید");
-            return redirect()->back()->withErrors('ssss','wwwwsdvsdvsdvsdvsdvww');
+            session()->flash('error', "شما هنوز ثبت نام نکرده اید");
         }
         return redirect()->back();
     }

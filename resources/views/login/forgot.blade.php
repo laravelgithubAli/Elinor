@@ -60,6 +60,7 @@
     </div>
 </div>
 @include('admin.layout.errors')
+@include('client.layout.sessionFlash')
 <!-- BEGIN: JS Assets-->
 <script src="{{url('')}}/dist/js/app.js"></script>
 <!-- END: JS Assets-->

@@ -8,7 +8,7 @@
 }
 
 .cart-level-container {
-    margin-top: 40px;
+    margin-top: 161px;
 }
 
 .add-adress {
@@ -294,7 +294,7 @@
 
 .view-address-info-phone {
     margin: 0 1rem;
-   
+
 }
 
 .view-address-info-btn {
@@ -316,7 +316,7 @@
 
 .view-address-date-detail {
     width: 100%;
-    
+
 }
 
 .view-address-date-detail table {
@@ -522,7 +522,7 @@
     margin-top: 5rem;
 }
 
-.ofline-payment span{ 
+.ofline-payment span{
     margin-right: .5rem;
     font-weight: 600;
     color: #000;
@@ -565,7 +565,7 @@
 .show-cart-items {
     width: 85%;
     margin: 0 auto;
-    
+
     border-top: 3px solid gainsboro;
 }
 

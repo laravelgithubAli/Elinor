@@ -76,7 +76,8 @@ class ProductController extends Controller
         $get_session = $request()->session()->get('cart');*/
 
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        session()->flash('success', 'با موفقیت به سبد خرید اضافه شد!');
+        return redirect()->back();
     }
 
     /**
@@ -90,7 +91,7 @@ class ProductController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cart updated successfully');
+            session()->flash('info', 'سبد خرید با موفقیت به روزرسانی شد!');
         }
     }
 
@@ -101,15 +102,16 @@ class ProductController extends Controller
      */
     public function remove(Request $request)
     {
-        if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Product removed successfully');
-        }
+        session()->remove('cart');
+
+//        if($request->id) {
+//            $cart = session()->get('cart');
+//            if(isset($cart[$request->id])) {
+//                unset($cart[$request->id]);
+//                session()->put('cart', $cart);
+//            }
+//        }
+        session()->flash('error', 'با موفقیت حذف شد!');
+        return redirect()->back();
     }
-
-
 }

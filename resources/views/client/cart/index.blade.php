@@ -6,9 +6,6 @@
 @endsection
 
 @section('content')
-
-
-
     <main>
         <div class="cart-level-container">
             <a class="cart-level-one">
@@ -103,73 +100,16 @@
                                 <span>تومان</span>
                             </div>
                         </div>
-
-                        <div class="cart-product-info-close">
-                            <span class="material-icons">cancel</span>
-                        </div>
+                        <form action="{{route('remove.from.cart')}}" method="post">
+                            @csrf
+                            <div >
+                                <input type="submit" class="material-icons" value="cancel">
+                            </div>
+                        </form>
                     </div>
 
                 @endforeach
             @endif
-
-
-            <div class="cart-product-info">
-                <div class="cart-product-info-detail">
-                    <div class="cart-product-info-detail-image">
-                        <img src="/Client/assets/image/product-img1.jpg">
-                    </div>
-
-                    <div class="cart-product-info-detail-text">
-                        <h1 class="cart-product-title">متفرقه</h1>
-
-                        <h2 class="cart-product-subTitle">کیف دوشی مدل KHV</h2>
-
-                        <p class="cart-product-color">
-                            <span>رنگ : </span>
-                            <span class="cart-product-colorValue">قهوه‌ای</span>
-                        </p>
-
-                        <p class="cart-product-code">
-                            <span>کد محصول : </span>
-                            <span class="cart-product-codeValue">3518725</span>
-                        </p>
-
-                        <p class="cart-product-seller">
-                            <span> فروشنده : </span>
-                            <span class="cart-product-sellerValue">چمدان کالا</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="cart-product-info-price">
-                    <div class="cart-product-info-unitPrice">
-                        <div class="cart-product-info-unitPrice-count">
-                            <span>تعداد</span>
-                            <div class="">
-                                <span class="material-icons add-product">add</span>
-                                <span class="count-product">1</span>
-                                <span class="material-icons remove-product">remove</span>
-                            </div>
-                        </div>
-
-                        <div class="cart-product-info-unitPrice-text">
-                            <span>قیمت واحد</span>
-                            <span class="cart-product-info-unitPrice-value">479000</span>
-                            <span>تومان</span>
-                        </div>
-                    </div>
-
-                    <div class="cart-product-info-finalPrice">
-                        <span>قیمت نهایی</span>
-                        <span class="cart-product-info-finalPrice-value">479000</span>
-                        <span>تومان</span>
-                    </div>
-                </div>
-
-                <div class="cart-product-info-close">
-                    <span class="material-icons">cancel</span>
-                </div>
-            </div>
         </div>
 
         <div class="cart-payment">
@@ -210,7 +150,7 @@
         </div>
 
         <div class="cart-payment-btn">
-            <div><a href="cart-address.html">ثبت و مرحله بعد</a></div>
+            <div><a href="{{route('information')}}">ثبت و مرحله بعد</a></div>
         </div>
 
     </main>
@@ -259,4 +199,6 @@
         });
 
     </script>
+    @include('client.layout.sessionFlash')
 @endsection
+

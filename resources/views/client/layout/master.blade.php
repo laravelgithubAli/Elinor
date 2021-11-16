@@ -63,7 +63,13 @@
                                             <span>{{ $details['name'] }}</span>
                                             <span>سفید</span>
                                             <p>{{$details['cost']}} تومان</p>
-                                            <span class="material-icons remove-btm-pro">close</span>
+{{--                                            <span class="material-icons remove-btm-pro">close</span>--}}
+                                            <form action="{{route('remove.from.cart')}}" method="post">
+                                                @csrf
+                                                <div >
+                                                    <input type="submit" class="material-icons remove-btm-pro" value="cancel">
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 @endforeach
@@ -559,7 +565,7 @@
     });
 
 </script>
-
+@include('client.layout.sessionFlash')
 {{--End:Search.Script--}}
 @yield('script2')
 </body>

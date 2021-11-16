@@ -18,11 +18,11 @@
 
 @section('content')
     {{--Start:alert--}}
-    @if(session('success'))
+{{--    @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-    @endif
+    @endif--}}
     {{--End:alert--}}
     <main>
         <div class="product-details">

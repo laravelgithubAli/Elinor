@@ -282,6 +282,13 @@
                     <div class="side-menu__title"> ارسال خبرنامه </div>
                 </a>
             </li>
+
+             <li>
+                <a href="{{route('admin.information.show')}}" class="side-menu {{isset($activity12) ? $activity12:''}}">
+                    <div class="side-menu__icon"> <i data-feather="calendar"></i></div>
+                    <div class="side-menu__title"> لیست سفارشات </div>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- END: Side Menu -->
